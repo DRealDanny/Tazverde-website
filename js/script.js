@@ -175,12 +175,20 @@ function closeModalOutside(e) {
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
+const heroImages = document.querySelectorAll('.hero-img'); // Target the 3 new images
+
 function goSlide(n) {
+  // 1. Remove active class from current elements
   slides[currentSlide].classList.remove('active');
   dots[currentSlide].classList.remove('active');
+  if (heroImages.length > 0) heroImages[currentSlide].classList.remove('active');
+
   currentSlide = n;
+
+  // 2. Add active class to next elements
   slides[currentSlide].classList.add('active');
   dots[currentSlide].classList.add('active');
+  if (heroImages.length > 0) heroImages[currentSlide].classList.add('active');
 }
 setInterval(()=>{ goSlide((currentSlide+1)%slides.length); }, 5000);
 
