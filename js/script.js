@@ -175,7 +175,7 @@ function closeModalOutside(e) {
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
-const heroImages = document.querySelectorAll('.hero-img'); // Target the 3 new images
+const heroImages = document.querySelectorAll('.hero-img'); // New: Selects your 3 images
 
 function goSlide(n) {
   // 1. Remove active class from current elements

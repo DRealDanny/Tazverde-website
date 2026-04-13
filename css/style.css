@@ -290,31 +290,38 @@ footer{background:var(--green-dark);padding:4rem 0 2rem;}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
-/* --- Hero Image Slider --- */
+/* --- Hero Directional Wipe Animation --- */
 .hero-image-slider {
   position: absolute;
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
-  width: 650px; /* Adjust size based on your preference */
-  height: 650px;
+  width: 600px;
+  height: 600px;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden; /* Important for the wipe effect */
 }
 
 .hero-img {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   opacity: 0;
-  transform: scale(0.9) translateX(20px);
-  transition: opacity 0.8s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.2));
+  /* Start with a hidden 100% mask from the right */
+  clip-path: inset(0 0 0 100%);
+  transform: scale(1.1);
+  transition: 
+    opacity 0.4s ease, 
+    clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-img.active {
   opacity: 1;
-  transform: scale(1) translateX(0);
+  /* Reveal the image by sliding the mask to 0% */
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
 }
