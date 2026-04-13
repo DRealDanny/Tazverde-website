@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Products - TazVerde LTD</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 4 6 4 12c0 3 1.5 5.5 3.5 7L12 22l4.5-3C18.5 17.5 20 15 20 12c0-6-4-10-8-10z" fill="#0e2b1a"/><path d="M12 6c0 0-4 3-4 7s4 6 4 6 4-2 4-6-4-7-4-7z" fill="rgba(200,151,58,0.3)"/><line x1="12" y1="6" x2="12" y2="19" stroke="#0e2b1a" stroke-width="1"/></svg>
+      </div>
+      <span class="logo-text">Taz<span>Verde</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ PRODUCTS PAGE ═══════════════════════════════ -->
+<div class="page active" id="page-products">
+  <section class="products-hero">
+    <div class="section-inner products-hero-inner">
+      <div class="section-label"><span>Our Products</span></div>
+      <h1>Premium Agricultural<br><em>Products</em></h1>
+      <p>Twelve carefully sourced, processed, and exported products — each reflecting TazVerde's unwavering commitment to purity, sustainability, and excellence.</p>
+    </div>
+  </section>
+
+  <section class="all-products">
+    <div class="section-inner">
+      <div class="products-grid" id="products-grid">
+
+        <div class="product-card" onclick="openModal('vanilla-pods')">
+          <div class="product-img pc-vanilla">
+            <img src="assets/images/vanilla-pods.png" alt="Vanilla Pods">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Vanilla Pods</div>
+            <p class="product-teaser">Handpicked from Uganda's finest farms, naturally cured for rich, complex flavors ideal for gourmet and commercial use.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('vanilla-powder')">
+          <div class="product-img pc-vpowder">
+            <img src="assets/images/vanilla-powder.png" alt="Vanilla Powder">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Vanilla Powder</div>
+            <p class="product-teaser">Finely milled from premium vanilla beans — pure, aromatic, and an excellent alternative to liquid extracts.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('cocoa-beans')">
+          <div class="product-img pc-cocoa">
+            <img src="assets/images/cocoa-beans.png" alt="Cocoa Beans">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Cocoa Beans</div>
+            <p class="product-teaser">Premium-grade cocoa beans sourced from Africa, processed to maintain authenticity and robust chocolate character.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('cocoa-shells')">
+          <div class="product-img pc-shells">
+            <img src="assets/images/cocoa-shells.png" alt="Cocoa Shells">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Cocoa Shells</div>
+            <p class="product-teaser">A sustainable byproduct of cocoa processing — versatile for use as fertilizer, animal feed, and cocoa-flavored extracts.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('cocoa-nibs')">
+          <div class="product-img pc-nibs">
+            <img src="assets/images/cocoa-nibs.png" alt="Cocoa Nibs">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Cocoa Nibs</div>
+            <p class="product-teaser">Small, crushed cocoa pieces with bold bitter-chocolatey flavor. Available in raw and roasted forms — a nutrient-dense superfood.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('coffee-beans')">
+          <div class="product-img pc-coffee">
+            <img src="assets/images/coffee-beans.png" alt="Coffee Beans">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Coffee Beans</div>
+            <p class="product-teaser">Aromatic, high-grade beans from top African coffee regions — hand-picked, sun-dried, and precision processed.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('chilli-powder')">
+          <div class="product-img pc-chilli">
+            <img src="assets/images/chilli-powder.png" alt="Chilli Powder">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Chilli Powder</div>
+            <p class="product-teaser">Vibrant, intensely flavored chili powder — sun-dried, milled, and free from artificial colors or additives.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('ginger')">
+          <div class="product-img pc-ginger">
+            <img src="assets/images/ginger.png" alt="Ginger">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Ginger</div>
+            <p class="product-teaser">Pungent, warm, and naturally potent — sourced from rich African agricultural lands in both fresh and dried forms.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('garlic')">
+          <div class="product-img pc-garlic">
+            <img src="assets/images/garlic.png" alt="Garlic">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Garlic</div>
+            <p class="product-teaser">Robust, naturally potent garlic sourced from Africa — a fundamental culinary and health-promoting ingredient.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('sesame-seeds')">
+          <div class="product-img pc-sesame">
+            <img src="assets/images/sesame-seeds.png" alt="Sesame Seeds">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Sesame Seeds</div>
+            <p class="product-teaser">Sun-soaked, handpicked white sesame seeds from Africa — packed with nutrients and versatile in countless culinary applications.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('hibiscus')">
+          <div class="product-img pc-hibiscus">
+            <img src="assets/images/hibiscus-flower.png" alt="Hibiscus Flower">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Hibiscus Flower</div>
+            <p class="product-teaser">Vibrant ruby-red dried hibiscus from Nigeria — rich in antioxidants, perfect for teas, beverages, and culinary use.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="openModal('crude-palm-oil')">
+          <div class="product-img pc-cpo">
+            <img src="assets/images/crude-palm-oil.png" alt="Crude Palm Oil (CPO)">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Crude Palm Oil (CPO)</div>
+            <p class="product-teaser">Sustainably sourced, naturally nutrient-rich crude palm oil — ideal for food manufacturing, biofuel, and personal care industries.</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div class="section-inner">
+      <h2>Ready to Place a Bulk Order?</h2>
+      <p>Contact us for competitive pricing, MOQs, and tailored export solutions.</p>
+      <!-- Fixed the CTA button link! -->
+      <a href="contact.html" class="btn-dark">Request a Quote</a>
+    </div>
+  </div>
+
+ <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Taz<span>Verde</span></div>
+          <p class="footer-desc">UK-headquartered agri-export company delivering premium, ethically sourced agricultural products to global markets.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <!-- Links converted to real links -->
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <!-- Links converted to real links -->
+          <a href="products.html">Vanilla Pods</a>
+          <a href="products.html">Coffee Beans</a>
+          <a href="products.html">Cocoa Beans</a>
+          <a href="products.html">Crude Palm Oil</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>info@tazverde.com</p>
+          <!-- Changed to clickable phone number -->
+          <a href="tel:+2344366748892">+234 436 674 8892</a>
+          <p>Uganda · Nigeria · Ghana · Tanzania</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 TazVerde LTD. All rights reserved.</div>
+        <div class="sdg-badge"><span>Web design by</span><strong>Creativo</strong></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════ PRODUCT MODAL ═══════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-tag" id="modal-tag">Product</div>
+      <div class="modal-title" id="modal-title">Product Name</div>
+      <p class="modal-desc" id="modal-desc">Description</p>
+    </div>
+    <div class="modal-highlights">
+      <h4>Product Highlights</h4>
+      <div id="modal-highlights-list"></div>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

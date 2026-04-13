@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home - TazVerde LTD</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 4 6 4 12c0 3 1.5 5.5 3.5 7L12 22l4.5-3C18.5 17.5 20 15 20 12c0-6-4-10-8-10z" fill="#0e2b1a"/><path d="M12 6c0 0-4 3-4 7s4 6 4 6 4-2 4-6-4-7-4-7z" fill="rgba(200,151,58,0.3)"/><line x1="12" y1="6" x2="12" y2="19" stroke="#0e2b1a" stroke-width="1"/></svg>
+      </div>
+      <span class="logo-text">Taz<span>Verde</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ HOME PAGE ═══════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-leaf">
+      <svg viewBox="0 0 400 400" fill="none"><path d="M200 20 C300 60 380 200 340 320 C310 400 200 380 120 320 C40 260 20 120 80 60 C120 20 200 20 200 20Z" fill="white"/><path d="M200 20 L200 380" stroke="rgba(255,255,255,0.3)" stroke-width="1"/><path d="M200 80 C180 100 140 120 100 130" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/><path d="M200 140 C175 160 135 175 95 178" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/><path d="M200 200 C170 220 130 235 90 232" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/><path d="M200 80 C220 100 260 120 300 130" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/><path d="M200 140 C225 160 265 175 305 178" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/><path d="M200 200 C230 220 270 235 310 232" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/></svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag"><div class="hero-tag-dot"></div><span>UK Headquartered · Africa Sourced · Global Delivered</span></div>
+      <div class="carousel-slides">
+        <div class="slide active">
+          <h1>Africa's Finest —<br><em>Delivered Clean,</em><br>Bold, and Global.</h1>
+          <p class="hero-sub">Premium-quality agricultural products sourced from Uganda, Nigeria, Ghana, and Tanzania, delivered to markets worldwide.</p>
+          <div class="hero-btns">
+            <!-- Buttons converted to real links -->
+            <a href="products.html" class="btn-primary">Explore Our Products</a>
+            <a href="about.html" class="btn-outline">Our Story</a>
+          </div>
+        </div>
+        <div class="slide">
+          <h1>Grown Pure.<br><em>Sourced Right.</em><br>Trusted Worldwide.</h1>
+          <p class="hero-sub">From handpicked vanilla pods to vibrant hibiscus — each product reflects deep respect for land, farmers, and quality.</p>
+          <div class="hero-btns">
+            <!-- Buttons converted to real links -->
+            <a href="products.html" class="btn-primary">Explore Our Products</a>
+            <a href="contact.html" class="btn-outline">Get In Touch</a>
+          </div>
+        </div>
+        <div class="slide">
+          <h1>Bold Flavors.<br><em>Clean Sourcing.</em><br>No Compromises.</h1>
+          <p class="hero-sub">Chemical-free, eco-conscious farming methods — full traceability from farm to export, meeting international standards.</p>
+          <div class="hero-btns">
+            <!-- Buttons converted to real links -->
+            <a href="contact.html" class="btn-primary">Request a Quote</a>
+            <a href="about.html" class="btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-dots" style="display: none;">
+        <div class="dot active" onclick="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)"></div>
+        <div class="dot" onclick="goSlide(2)"></div>
+      </div>
+    </div>
+    <!-- Stats Block Removed Here! -->
+  </section>
+
+  <!-- Who We Are -->
+  <section class="section" style="background:var(--cream);">
+    <div class="section-inner">
+      <div class="who-grid">
+        <div class="who-image fade-in">
+          <div class="who-image-main">
+            <!-- Image Tag Added Here -->
+            <img src="assets/images/who-weare.png" alt="Who We Are - TazVerde">
+          </div>
+          <div class="who-image-badge">
+            <span class="who-badge-num">2024</span>
+            <div class="who-badge-label">Incorporated</div>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="section-label"><span>Who We Are</span></div>
+          <h2 class="section-title">Premium Agriculture<br>for a <em>Global Market</em></h2>
+          <p class="section-desc" style="margin-bottom:1.5rem;">TazVerde LTD is a UK-headquartered company operating across Uganda, Nigeria, Ghana, and Tanzania, focused on the global supply of premium-quality agricultural products. Our specialty lies in vanilla, cocoa, coffee, spices, and more — all meticulously sourced to preserve natural purity and flavor.</p>
+          <p class="section-desc" style="margin-bottom:2rem;">We collaborate with established, eco-conscious farm networks that uphold ethical harvesting and maintain full traceability from farm to export.</p>
+          <div class="who-features">
+            <div class="who-feature"><div class="who-feature-dot"></div><p>Ethical, traceable sourcing</p></div>
+            <div class="who-feature"><div class="who-feature-dot"></div><p>International quality standards</p></div>
+            <div class="who-feature"><div class="who-feature-dot"></div><p>Sustainable farming practices</p></div>
+            <div class="who-feature"><div class="who-feature-dot"></div><p>Farm-to-export integrity</p></div>
+          </div>
+          <div style="margin-top:2.5rem;">
+            <!-- Button converted to real link -->
+            <a href="about.html" class="btn-primary">Discover Our Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Preview -->
+  <section class="section products-preview">
+    <div class="section-inner">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;">
+        <div>
+          <div class="section-label"><span>Our Products</span></div>
+          <h2 class="section-title" style="margin-bottom:0;">Nature's Finest,<br><em>Globally Delivered</em></h2>
+        </div>
+        <!-- Button converted to real link -->
+        <a href="products.html" class="btn-outline">View All Products</a>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/vanilla-pods.png" alt="Vanilla Pods"></div>
+          <div class="prod-name">Vanilla Pods</div>
+          <div class="prod-origin">Uganda Origin</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/coffee-beans.png" alt="Coffee Beans"></div>
+          <div class="prod-name">Coffee Beans</div>
+          <div class="prod-origin">East & West Africa</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/cocoa-beans.png" alt="Cocoa Beans"></div>
+          <div class="prod-name">Cocoa Beans</div>
+          <div class="prod-origin">Africa Origin</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/chilli-powder.png" alt="Chilli Powder"></div>
+          <div class="prod-name">Chilli Powder</div>
+          <div class="prod-origin">Sun-Dried, Natural</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/crude-palm-oil.png" alt="Crude Palm Oil"></div>
+          <div class="prod-name">Crude Palm Oil</div>
+          <div class="prod-origin">Sustainably Sourced</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/hibiscus-flower.png" alt="Hibiscus"></div>
+          <div class="prod-name">Hibiscus</div>
+          <div class="prod-origin">Nigeria Origin</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/ginger.png" alt="Ginger"></div>
+          <div class="prod-name">Ginger & Garlic</div>
+          <div class="prod-origin">Africa Origin</div>
+        </div>
+        <div class="prod-card" onclick="window.location.href='products.html'">
+          <div class="prod-icon"><img src="assets/images/sesame-seeds.png" alt="Sesame Seeds"></div>
+          <div class="prod-name">Sesame Seeds</div>
+          <div class="prod-origin">Africa Origin</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" style="background:var(--cream-dark);">
+    <div class="section-inner">
+      <div style="text-align:center;max-width:580px;margin:0 auto;">
+        <div class="section-label" style="justify-content:center;"><span>Why Choose Us</span></div>
+        <h2 class="section-title">Quality You Can <em>Trust,</em><br>Every Shipment</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon">🏆</div>
+          <div class="why-title">Premium Quality Products</div>
+          <p class="why-desc">Sourced from the best farms and processed with the highest standards — every product meets rigorous international quality controls.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🤝</div>
+          <div class="why-title">Customer Focused</div>
+          <p class="why-desc">We prioritize your needs with tailored solutions and reliable, responsive service from inquiry to delivery.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🌍</div>
+          <div class="why-title">Global Reach</div>
+          <p class="why-desc">With strong logistics partners, we ensure consistent, timely deliveries across international markets, regardless of order size.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🌱</div>
+          <div class="why-title">Sustainably Sourced</div>
+          <p class="why-desc">Our methods align with environmental ethics and support sustainable agriculture — every purchase is a step toward a healthier planet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="section-inner">
+      <h2>Ready to Source Premium Agricultural Products?</h2>
+      <p>Connect with our team for bulk orders, partnerships, and custom sourcing requirements.</p>
+      <!-- Button converted to real link -->
+      <a href="contact.html" class="btn-dark">Get In Touch Today</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Taz<span>Verde</span></div>
+          <p class="footer-desc">UK-headquartered agri-export company delivering premium, ethically sourced agricultural products to global markets.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <!-- Links converted to real links -->
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <!-- Links converted to real links -->
+          <a href="products.html">Vanilla Pods</a>
+          <a href="products.html">Coffee Beans</a>
+          <a href="products.html">Cocoa Beans</a>
+          <a href="products.html">Crude Palm Oil</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>info@tazverde.com</p>
+          <!-- Changed to clickable phone number -->
+          <a href="tel:+2344366748892">+234 436 674 8892</a>
+          <p>Uganda · Nigeria · Ghana · Tanzania</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 TazVerde LTD. All rights reserved.</div>
+        <div class="sdg-badge"><span>Web design by</span><strong>Creativo</strong></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
