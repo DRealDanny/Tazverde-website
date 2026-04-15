@@ -1,53 +1,83 @@
 {
-  "global_settings": {
-    "contact_email": "info@tazverde.com",
-    "contact_phone": "+234 436 674 8892",
-    "contact_response_time": "We respond within 24 hours"
-  },
-  "products": [
-    {
-      "id": "vanilla-pods",
-      "name": "Vanilla Pods",
-      "teaser": "Handpicked from Uganda's finest farms, naturally cured for rich, complex flavors ideal for gourmet and commercial use.",
-      "image": "assets/images/vanilla-pods.png",
-      "color_class": "pc-vanilla",
-      "modal": {
-        "tag": "Gourmet Grade",
-        "title": "Vanilla Pods",
-        "desc": "Sourced from the lush, high-altitude regions of Uganda, our vanilla pods are naturally cured to preserve their high vanillin content and distinctive floral aroma.",
-        "highlights": [
-          {
-            "title": "Flavor Profile",
-            "text": "Rich, creamy, and highly aromatic with deep floral notes."
-          },
-          {
-            "title": "Applications",
-            "text": "Premium baking, artisanal ice cream, luxury perfumes."
-          }
-        ]
-      }
+    "global_settings": {
+        "contact_email": "info@tazverde.com",
+        "contact_phone": "+234 111 222 3333",
+        "contact_response_time": "We respond within 24 hours"
     },
-    {
-      "id": "cocoa-beans",
-      "name": "Cocoa Beans",
-      "teaser": "Rich, sun-dried African cocoa sourced directly from sustainable farms.",
-      "image": "assets/images/cocoa-beans.png",
-      "color_class": "pc-cocoa",
-      "modal": {
-        "tag": "Export Quality",
-        "title": "Cocoa Beans",
-        "desc": "Sourced directly from sustainable farms across West Africa, our cocoa beans offer a deep, robust flavor profile.",
-        "highlights": [
-          {
-            "title": "Flavor Profile",
-            "text": "Deep, earthy chocolate notes with a hint of fruitiness."
-          },
-          {
-            "title": "Applications",
-            "text": "High-end chocolate production and baking applications."
-          }
-        ]
-      }
-    }
-  ]
+    "products": [
+        {
+            "id": "vanilla-pods",
+            "name": "Vanilla Pods",
+            "teaser": "Handpicked from Uganda's finest farms, naturally cured for rich, complex flavors ideal for gourmet and commercial use.",
+            "image": "assets\/images\/vanilla-pods.png",
+            "color_class": "pc-vanilla",
+            "modal": {
+                "tag": "Gourmet Grade",
+                "title": "Vanilla Pods",
+                "desc": "Sourced from the lush, high-altitude regions of Uganda, our vanilla pods are naturally cured to preserve their high vanillin content and distinctive floral aroma.",
+                "highlights": [
+                    {
+                        "title": "Flavor Profile",
+                        "text": "Rich, creamy, and highly aromatic with deep floral notes."
+                    },
+                    {
+                        "title": "Applications",
+                        "text": "Premium baking, artisanal ice cream, luxury perfumes."
+                    }
+                ]
+            }
+        },
+        {
+            "id": "cocoa-beans",
+            "name": "Cocoa Beans",
+            "teaser": "Rich, sun-dried African cocoa sourced directly from sustainable farms.",
+            "image": "assets\/images\/cocoa-beans.png",
+            "color_class": "pc-cocoa",
+            "modal": {
+                "tag": "Export Quality",
+                "title": "Cocoa Beans",
+                "desc": "Sourced directly from sustainable farms across West Africa, our cocoa beans offer a deep, robust flavor profile.",
+                "highlights": [
+                    {
+                        "title": "Flavor Profile",
+                        "text": "Deep, earthy chocolate notes with a hint of fruitiness."
+                    },
+                    {
+                        "title": "Applications",
+                        "text": "High-end chocolate production and baking applications."
+                    }
+                ]
+            }
+        },
+        {
+            "id": "garlic",
+            "name": "Garlic",
+            "teaser": "We offer high-quality garlic, a fundamental ingredient in cuisines worldwide, celebrated for its robust flavor and health-promoting properties. Sourced from Africa, our garlic is available for export at competitive prices.",
+            "image": "assets\/images\/1776254280_garlic.png",
+            "color_class": "pc-garlic",
+            "modal": {
+                "tag": "Export Quality",
+                "title": "Garlic",
+                "desc": "We offer high-quality garlic, a fundamental ingredient in cuisines worldwide, celebrated for its robust flavor and health-promoting properties. Sourced from Africa, our garlic is available for export at competitive prices.",
+                "highlights": [
+                    {
+                        "title": "100% Natural and Potent",
+                        "text": "Our garlic is carefully cultivated and harvested to ensure maximum flavor and potency. It is free from artificial additives, preserving its natural integrity."
+                    },
+                    {
+                        "title": "Robust Flavor and Versatility",
+                        "text": "Known for its pungent and savory notes, our garlic adds depth and character to an extensive range of dishes, from stews and sauces to roasts and marinades. It is an indispensable ingredient in both home and professional kitchens."
+                    },
+                    {
+                        "title": "Rich in Health Benefits",
+                        "text": "Garlic is celebrated for its medicinal properties, including immune-boosting effects, cardiovascular support, and antioxidant properties, making it a valuable addition to a healthy diet."
+                    },
+                    {
+                        "title": "Ethically Sourced",
+                        "text": "We are committed to ethical sourcing practices, partnering directly with local farmers who employ sustainable and responsible farming methods. Your purchase supports community development and environmental preservation."
+                    }
+                ]
+            }
+        }
+    ]
 }
