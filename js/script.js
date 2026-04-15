@@ -201,3 +201,104 @@ function initFadeIns() {
   els.forEach(el=>{ el.classList.remove('visible'); obs.observe(el); });
 }
 initFadeIns();
+
+// ==========================================================================
+// JSON DATABASE ENGINE & MODALS
+// ==========================================================================
+
+let globalProducts = []; // Stores our products
+
+async function initDatabase() {
+    try {
+        const response = await fetch('content.json');
+        const data = await response.json();
+
+        // 1. Update Email and Phone on the website
+        applyGlobalSettings(data.global_settings);
+
+        // 2. Save products and build the grid
+        globalProducts = data.products;
+        const grid = document.getElementById('products-grid');
+        if (grid) {
+            renderProductGrid(globalProducts, grid);
+        }
+    } catch (error) {
+        console.error("Database Error:", error);
+    }
+}
+
+// Automatically updates the Footer and Contact Page
+function applyGlobalSettings(settings) {
+    const footerEmail = document.querySelector('footer a[href^="mailto:"]');
+    if (footerEmail) {
+        footerEmail.textContent = settings.contact_email;
+        footerEmail.href = `mailto:${settings.contact_email}`;
+    }
+    const footerPhone = document.querySelector('footer a[href^="tel:"]');
+    if (footerPhone) {
+        const cleanPhone = settings.contact_phone.replace(/\s+/g, '');
+        footerPhone.textContent = settings.contact_phone;
+        footerPhone.href = `tel:${cleanPhone}`;
+    }
+    const contactValues = document.querySelectorAll('.ci-value');
+    if (contactValues.length > 0) contactValues[0].textContent = settings.contact_email; 
+    const contactSubtexts = document.querySelectorAll('.ci-sub');
+    if (contactSubtexts.length > 0) contactSubtexts[0].textContent = settings.contact_response_time;
+}
+
+// Builds the Product Cards on the Products Page
+function renderProductGrid(products, gridElement) {
+    gridElement.innerHTML = ''; // Clears out the old hardcoded HTML
+    products.forEach(p => {
+        gridElement.innerHTML += `
+        <div class="product-card" onclick="openModal('${p.id}')">
+          <div class="product-img ${p.color_class}">
+            <img src="${p.image}" alt="${p.name}">
+          </div>
+          <div class="product-body">
+            <div class="product-name">${p.name}</div>
+            <p class="product-teaser">${p.teaser}</p>
+            <div class="product-link">View Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+        `;
+    });
+}
+
+// Opens the Modal and fills it with JSON data
+function openModal(id) {
+    const p = globalProducts.find(item => item.id === id);
+    if(!p) return;
+    
+    document.getElementById('modal-tag').textContent = p.modal.tag;
+    document.getElementById('modal-title').textContent = p.modal.title;
+    document.getElementById('modal-desc').textContent = p.modal.desc;
+    
+    const list = document.getElementById('modal-highlights-list');
+    list.innerHTML = p.modal.highlights.map(h => `
+      <div class="highlight-item">
+        <div class="highlight-dot"></div>
+        <div class="highlight-content">
+          <strong>${h.title}</strong>
+          <p>${h.text}</p>
+        </div>
+      </div>
+    `).join('');
+    
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+// Closes the Modal
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e) {
+  if(e.target===document.getElementById('modal-overlay')) closeModal();
+}
+
+// Start the engine when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initDatabase();
+});
