@@ -239,7 +239,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(14,43,26,0.
   gap: 0.5rem;
   transition: gap 0.3s ease;
 }
-
 .product-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem;}
 .product-teaser {
   font-size: 0.95rem;
