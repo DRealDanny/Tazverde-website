@@ -1,0 +1,143 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   TAZVERDE LTD — REFINED RESPONSIVE STYLESHEET (CLEAN FIX)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 992px) {
+
+    /* 1. Global Spacing & Margins */
+    .section-inner {
+        padding: 0 1.5rem !important; 
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    section {
+        padding: 3.5rem 0 !important; 
+    }
+
+    /* 2. Text Scaling */
+    h1 { font-size: 2.4rem !important; line-height: 1.2 !important; }
+    h2, .section-title { font-size: 2rem !important; }
+    p, .section-desc { font-size: 1rem !important; line-height: 1.6 !important; }
+
+    /* 3. Hero Sections - Image Hiding & Left Alignment */
+    .hero-image-slider, 
+    .about-hero-image,
+    .hero-bg,
+    .hero-pattern {
+        display: none !important; 
+    }
+
+    .hero, .about-hero, .products-hero, .contact-hero {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 6rem 1.5rem 3rem 1.5rem !important;
+        background: #0e2b1a !important; 
+        text-align: left !important; 
+    }
+
+    .hero-content, .about-hero-inner, .products-hero-inner, .about-hero-text {
+        display: block !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 4. FIX: The 2024 Incorporation Badge (No poking out) */
+    .who-image {
+        position: relative !important;
+        overflow: hidden !important; 
+        border-radius: 12px !important;
+        margin: 0 !important; /* Ensures container stays in margin */
+    }
+
+    .who-image-badge {
+        right: 15px !important; 
+        bottom: 15px !important;
+        left: auto !important;
+        transform: scale(0.8) !important; 
+        position: absolute !important;
+    }
+
+    /* 5. FIX: Image Width (Follows Left/Right Padding) */
+    /* This ensures the image doesn't fill the screen edge-to-edge */
+    .who-image-main, .purity-image img, .about-hero-image img, .prod-card img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        border-radius: 12px !important;
+    }
+
+    /* 6. Mobile Menu Spacing */
+    .nav-links a {
+        padding: 0.7rem 1.5rem !important; 
+    }
+
+    /* 7. Index: Product Preview Section (Show Only 3) */
+    .prod-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important; 
+    }
+
+    .prod-grid .prod-card:nth-child(n+4) {
+        display: none !important;
+    }
+
+    /* 8. FIX: Stacking & Order */
+    /* About Us Image on Top */
+    .purity-grid {
+        display: flex !important;
+        flex-direction: column-reverse !important; 
+        gap: 2.5rem !important;
+    }
+
+    .who-grid, .why-grid, .about-grid, .mvv-grid, .apart-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important; 
+    }
+
+    /* FIX: Product Page Stacking (1-by-1) */
+    .products-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* 9. Contact Form - Spacing & Order */
+    .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important; 
+    }
+
+    .contact-form { order: 1 !important; }
+    .contact-info { order: 2 !important; margin-top: 1rem !important; }
+
+    /* 10. Footer Content Alignment */
+    .footer-inner {
+        padding: 0 1.5rem !important; 
+    }
+
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: left !important; 
+        gap: 2.5rem !important;
+    }
+
+    .footer-col {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    /* FIX: "Design by Creativo" Left Aligned */
+    .footer-bottom {
+        flex-direction: column !important;
+        align-items: flex-start !important; 
+        padding: 2.5rem 1.5rem !important;
+        gap: 1rem !important;
+    }
+}
