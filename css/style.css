@@ -402,85 +402,145 @@ footer{background:var(--green-dark);padding:4rem 0 2rem;}
   display: block; /* Removes the default gap browsers add under images */
 }
 
-/* ═══════════════════════════════ MOBILE NAVIGATION ═══════════════════════════════ */
+/* ═══════════════════════════════ SLEEK GLASSMORPHISM NAVIGATION ═══════════════════════════════ */
 
-/* Default: Hide the hamburger on Desktop */
+/* Default: Hide the hamburger and icons on Desktop */
 .hamburger {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1000; /* Keeps it above the overlay */
+  z-index: 1000;
 }
-
-.hamburger .bar {
-  display: block;
-  width: 25px;
-  height: 2px;
-  margin: 5px auto;
-  background-color: var(--white);
-  transition: all 0.3s ease-in-out;
+.nav-icon {
+  display: none; /* Icons only show on mobile */
 }
 
 /* Tablet and Mobile Breakpoint */
 @media (max-width: 992px) {
+  
   .hamburger {
     display: block;
   }
+  
+  /* Make the Hamburger White */
+  .hamburger .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #ffffff; 
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
 
-  /* The Mobile Menu Canvas */
+  /* The Sleek Glassmorphism Canvas */
   .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(10, 31, 17, 0.95); /* Deep green glass */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    top: 100%; 
+    left: 5%;
+    width: 90%; 
+    /* Premium Dark Frosted Glass */
+    background: rgba(14, 43, 26, 0.65); 
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle rim light */
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); 
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
+    padding: 1.5rem;
+    gap: 0.2rem;
     
-    /* Animation setup */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top center;
+    transform: translateY(-15px) scale(0.98);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 999;
   }
 
-  /* Make links huge and elegant for touch */
-  .nav-links a {
-    font-size: 2rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-  }
-  
-  .nav-links .nav-cta {
-    font-size: 1.2rem;
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  /* When JS adds the .active class */
   .nav-links.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(15px) scale(1);
   }
 
-  /* Hamburger to 'X' Animation */
+  /* Link Container styling */
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    color: #ffffff; 
+    text-decoration: none;
+    padding: 0.8rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  /* Strip the Contact button back to normal text */
+  .nav-links .nav-cta {
+    background: transparent !important;
+    color: #ffffff !important;
+    border-radius: 0 !important;
+    padding: 0.8rem 0.5rem !important;
+    margin-top: 0 !important;
+    text-align: left !important;
+    font-weight: 500 !important;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none; /* No line under the last item */
+  }
+
+  /* ── THE GLOSSY ICONS ── */
+  .nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    /* The iOS-style gradient shine */
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.02) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+  }
+
+  /* SVG styling */
+  .nav-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: #c8973a; /* Your Brand Gold */
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Hover States */
+  .nav-links a:hover,
+  .nav-links a.active,
+  .nav-links .nav-cta:hover {
+    color: #c8973a !important; 
+  }
+
+  /* Hamburger 'X' Animation */
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
+    transform: translateX(10px);
   }
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
-    background-color: var(--gold); /* Touch of gold when open */
+    background-color: #c8973a; 
   }
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-    background-color: var(--gold);
+    background-color: #c8973a;
   }
 }
