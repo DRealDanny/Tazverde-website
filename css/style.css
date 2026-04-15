@@ -401,3 +401,86 @@ footer{background:var(--green-dark);padding:4rem 0 2rem;}
   height: auto;
   display: block; /* Removes the default gap browsers add under images */
 }
+
+/* ═══════════════════════════════ MOBILE NAVIGATION ═══════════════════════════════ */
+
+/* Default: Hide the hamburger on Desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000; /* Keeps it above the overlay */
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Tablet and Mobile Breakpoint */
+@media (max-width: 992px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* The Mobile Menu Canvas */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 31, 17, 0.95); /* Deep green glass */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    
+    /* Animation setup */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Make links huge and elegant for touch */
+  .nav-links a {
+    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+  }
+  
+  .nav-links .nav-cta {
+    font-size: 1.2rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* When JS adds the .active class */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Hamburger to 'X' Animation */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background-color: var(--gold); /* Touch of gold when open */
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: var(--gold);
+  }
+}

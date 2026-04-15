@@ -302,3 +302,32 @@ function closeModalOutside(e) {
 document.addEventListener('DOMContentLoaded', () => {
     initDatabase();
 });
+
+/* ── MOBILE MENU LOGIC ── */
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    // Toggle menu open/close
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        
+        // Prevent background scrolling when menu is open
+        if(navMenu.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            document.body.style.overflow = "auto";
+        });
+    });
+});
