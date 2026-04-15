@@ -40,37 +40,51 @@
   <section class="contact-section">
     <div class="section-inner">
       <div class="contact-grid">
+        
         <div>
           <div class="section-label"><span>Send a Message</span></div>
           <h2 class="section-title" style="margin-bottom:2rem;">Request a <em>Quote</em></h2>
-          <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" placeholder="John"/></div>
-            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
-          </div>
-          <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@company.com"/></div>
-          <div class="form-group"><label>Company / Organisation</label><input type="text" placeholder="Your Company Name"/></div>
-          <div class="form-group">
-            <label>Product of Interest</label>
-            <select>
-              <option value="">Select a product...</option>
-              <option>Vanilla Pods</option>
-              <option>Vanilla Powder</option>
-              <option>Cocoa Beans</option>
-              <option>Cocoa Shells</option>
-              <option>Cocoa Nibs</option>
-              <option>Coffee Beans</option>
-              <option>Chilli Powder</option>
-              <option>Ginger</option>
-              <option>Garlic</option>
-              <option>Sesame Seeds</option>
-              <option>Hibiscus Flower</option>
-              <option>Crude Palm Oil</option>
-              <option>Multiple Products</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your requirements, quantities, and any other details..."></textarea></div>
-          <button class="btn-primary" style="width:100%;text-align:center;">Send Enquiry</button>
+          
+          <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+            <input type="hidden" name="access_key" value="fcee8e46-a0cb-4e9f-a2a0-02450c9101c7">
+
+            <input type="hidden" name="subject" value="New Inquiry from TazVerde Website">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div class="form-row">
+              <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="John" required/></div>
+              <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Smith" required/></div>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" name="Email Address" placeholder="john@company.com" required/></div>
+            <div class="form-group"><label>Company / Organisation</label><input type="text" name="Company Name" placeholder="Your Company Name"/></div>
+            
+            <div class="form-group">
+              <label>Product of Interest</label>
+              <select name="Product of Interest" required>
+                <option value="">Select a product...</option>
+                <option value="Vanilla Pods">Vanilla Pods</option>
+                <option value="Vanilla Powder">Vanilla Powder</option>
+                <option value="Cocoa Beans">Cocoa Beans</option>
+                <option value="Cocoa Shells">Cocoa Shells</option>
+                <option value="Cocoa Nibs">Cocoa Nibs</option>
+                <option value="Coffee Beans">Coffee Beans</option>
+                <option value="Chilli Powder">Chilli Powder</option>
+                <option value="Ginger">Ginger</option>
+                <option value="Garlic">Garlic</option>
+                <option value="Sesame Seeds">Sesame Seeds</option>
+                <option value="Hibiscus Flower">Hibiscus Flower</option>
+                <option value="Crude Palm Oil">Crude Palm Oil</option>
+                <option value="Multiple Products">Multiple Products</option>
+              </select>
+            </div>
+            
+            <div class="form-group"><label>Message</label><textarea name="Client Message" placeholder="Tell us about your requirements, quantities, and any other details..." required></textarea></div>
+            
+            <button type="submit" class="btn-primary" style="width:100%;text-align:center;border:none;cursor:pointer;">Send Enquiry</button>
+            <div id="result" style="margin-top: 1.5rem; font-size: 0.95rem; text-align: center; font-weight: 500;"></div>
+          </form>
         </div>
+
         <div class="contact-info">
           <div class="contact-info-card">
             <div class="ci-label">Email</div>
@@ -89,6 +103,7 @@
             <div class="ci-sub" style="color:rgba(255,255,255,0.5);">Committed to strengthening food systems and supporting smallholder farmers across Africa.</div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -133,5 +148,60 @@
 </div>
 
 <script src="js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+        // Prevent the page from refreshing
+        e.preventDefault();
+        
+        // Change text to show it's working
+        result.innerHTML = "Sending message...";
+        result.style.color = "var(--text-muted)";
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        // Send the data in the background
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                // Success State!
+                result.innerHTML = "Message sent successfully! We will be in touch.";
+                result.style.color = "var(--gold)"; // Matches your brand colors
+                form.reset(); // Clears the form fields
+            } else {
+                // Error State
+                console.log(response);
+                result.innerHTML = json.message;
+                result.style.color = "#ff6b6b";
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong! Please try again.";
+            result.style.color = "#ff6b6b";
+        })
+        .then(function() {
+            // Make the message disappear after 5 seconds for a clean UI
+            setTimeout(() => {
+                result.innerHTML = "";
+            }, 5000);
+        });
+    });
+});
+</script>
 </body>
 </html>
