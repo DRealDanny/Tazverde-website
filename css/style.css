@@ -195,7 +195,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(14,43,26,0.
 .products-hero p{color:rgba(255,255,255,0.6);max-width:540px;line-height:1.7;}
 .all-products{padding:5rem 0;}
 .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
-.product-card{background:var(--white);border-radius:4px;border:1px solid var(--border);overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  /* --- Keep cards same height --- */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(27,67,50,0.1);border-color:var(--gold);}
 
 /* ── THE SAFETY FENCE: IMAGE CONSTRAINTS ── */
@@ -212,9 +222,39 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(14,43,26,0.
   transform: scale(1.08);
 }
 
-.product-body{padding:1.5rem;}
+.product-body {
+  padding: 1.5rem;
+  /* --- Pushes the link to the bottom --- */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-link {
+  margin-top: auto; /* Always sits at the bottom */
+  color: var(--primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
 .product-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem;}
-.product-teaser{font-size:0.85rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;}
+.product-teaser {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  /* --- Limit to 3 lines --- */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Ensures empty or short text doesn't shrink the card */
+  min-height: 4.5em; 
+}
 .product-link{font-size:0.8rem;font-weight:600;color:var(--gold);letter-spacing:0.05em;text-transform:uppercase;display:flex;align-items:center;gap:6px;}
 .product-link svg{width:14px;height:14px;transition:transform 0.2s;}
 .product-card:hover .product-link svg{transform:translateX(4px);}
