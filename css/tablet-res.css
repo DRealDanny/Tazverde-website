@@ -1,0 +1,921 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   TAZVERDE LTD — TABLET RESPONSIVE STYLESHEET
+   Built by: Creativo
+   ──────────────────────────────────────────────────────────────────────────────
+   Purpose:
+     This file handles TABLET ONLY responsiveness.
+     It does NOT touch mobile — that is handled separately in responsive.css.
+   ──────────────────────────────────────────────────────────────────────────────
+   Breakpoints:
+     ▸ Tablet (all)         →  min-width: 768px  &  max-width: 1024px
+     ▸ Small tablet tweak   →  min-width: 768px  &  max-width: 834px
+       (iPad mini, older iPad portrait, Samsung Tab S6 Lite)
+   ──────────────────────────────────────────────────────────────────────────────
+   Reference devices:
+     iPad mini (6th gen)     →  744px  × 1133px
+     iPad Air (5th gen)      →  820px  × 1180px
+     iPad Pro 11"            →  834px  × 1194px
+     iPad Pro 12.9"          →  1024px × 1366px
+     Samsung Galaxy Tab S8   →  800px  × 1280px
+     Microsoft Surface Pro   →  912px  × 1368px
+   ──────────────────────────────────────────────────────────────────────────────
+   Page coverage (in order):
+     Navigation  ·  Hero (Index)  ·  Who We Are  ·  Products Preview
+     Why Choose Us  ·  CTA Banner  ·  About Hero  ·  About Body
+     About Values  ·  About Purity  ·  What Sets Us Apart  ·  Products Page
+     Product Modal  ·  Contact Page  ·  Footer
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ████████  TABLET  ░░  min-width: 768px  —  max-width: 1024px
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+  /* ─────────────────────────────────────────────
+     GLOBAL — SECTION SPACING & INNER CONTAINER
+  ───────────────────────────────────────────── */
+
+  .section {
+    padding: 4rem 0; /* Comfortable vertical rhythm — tighter than desktop (6rem) but more than mobile (3.5rem) */
+  }
+
+  .section-inner {
+    padding: 0 2.5rem; /* Generous side gutters — gives content room to breathe on a wider screen */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    width: 100%;            /* Full container width */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     GLOBAL — TYPOGRAPHY
+  ───────────────────────────────────────────── */
+
+  .section-title {
+    font-size: 2.4rem;  /* Step between desktop clamp (~3.2rem) and mobile (1.85rem) */
+    line-height: 1.2;   /* Slightly tighter for multi-line serif headings */
+  }
+
+  .section-label span {
+    font-size: 0.72rem; /* Keep the label tag text subtle on tablet */
+  }
+
+  p,
+  .section-desc {
+    font-size: 0.95rem; /* Comfortable reading size for tablet — between desktop and mobile */
+    line-height: 1.8;   /* Relaxed line spacing for readability */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     NAVIGATION
+     The hamburger already activates at 992px
+     (from style.css). This just tidies the inner
+     padding to match our tablet gutters.
+  ───────────────────────────────────────────── */
+
+  .nav-inner {
+    padding: 0 2.5rem; /* Match tablet section gutters for visual alignment */
+  }
+
+  .logo-text {
+    font-size: 1.4rem; /* Slightly smaller wordmark on tablet */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     HERO — INDEX PAGE
+     ┌──────────────────────────────────────────┐
+     │  HERO IMAGE HIDDEN ON TABLET             │
+     │  The .hero-image-slider (3 rotating PNG  │
+     │  product images) is positioned at right  │
+     │  5% with a fixed 600px × 600px size.     │
+     │  At tablet widths (768–1024px), it       │
+     │  overlaps the text badly — the design    │
+     │  simply cannot work at this scale.       │
+     │  We hide it and let the text fill the    │
+     │  full width cleanly, just like mobile.   │
+     └──────────────────────────────────────────┘
+  ───────────────────────────────────────────── */
+
+  .hero-image-slider {
+    display: none !important; /* ← HERO IMAGES HIDDEN ON TABLET (Index page) */
+  }
+
+  .hero-pattern {
+    display: none; /* The subtle grid pattern adds visual noise — clean without it */
+  }
+
+  .hero {
+    height: auto !important;         /* Override the 100vh — content dictates the height */
+    min-height: auto !important;     /* Kill the forced min-height gap from desktop styles */
+    padding-top: 7rem !important;    /* Top space: enough to clear the fixed nav (72px) with breathing room */
+    padding-bottom: 5.5rem !important; /* Bottom space: generous but not excessive */
+    display: flex;                   /* Flex container for the hero content block */
+    flex-direction: column;          /* Stack hero content vertically */
+    justify-content: flex-start;     /* Content starts from the top padding down */
+  }
+
+  .hero-content {
+    padding: 0 2.5rem; /* Match tablet gutters for the hero text block */
+    width: 100%;       /* Text fills the full available width (image is hidden) */
+    max-width: 100%;   /* Remove any max-width constraint */
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;   /* Larger than mobile (2.8rem) — tablet has the room */
+    line-height: 1.15;   /* Tight but readable for the 3-line serif headline */
+    max-width: 600px;    /* Prevent headline from stretching too wide at larger tablets */
+  }
+
+  .hero-tag {
+    margin-bottom: 1.2rem; /* Space between the tag badge and the headline above it */
+  }
+
+  .hero-tag span {
+    font-size: 0.65rem; /* Tag label is small — keep it readable but compact on tablet */
+  }
+
+  .hero-sub {
+    font-size: 1rem;    /* Comfortable subtitle size with image hidden and full width */
+    max-width: 540px;   /* Stop subtitle from stretching too wide on larger tablets */
+    margin-bottom: 2.2rem; /* Space between subtitle and the CTA button row */
+    line-height: 1.7;   /* Relaxed line spacing for the sub-paragraph */
+  }
+
+  .hero-btns {
+    display: flex !important;
+    flex-direction: row !important; /* Forces them into a row */
+    flex-wrap: nowrap !important;   /* Prevents them from jumping to the next line */
+    justify-content: flex-start !important; /* Keeps them to the left to match your text */
+    gap: 1rem !important; 
+    width: 100%;
+}
+
+/* This targets the actual buttons to make sure they aren't filling the whole width */
+.hero-btns .btn, 
+.hero-btns a {
+    width: auto !important; 
+    padding: 1rem 2rem !important; /* Professional button sizing for tablet */
+    white-space: nowrap !important; /* Prevents text inside buttons from wrapping */
+}
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.85rem 1.8rem; /* Comfortable tap target — slightly narrower than full desktop */
+  }
+
+  .carousel-dots {
+    bottom: 2rem;  /* Pull dots up from the bottom edge */
+    left: 2.5rem;  /* Align with the hero content padding */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     WHO WE ARE — INDEX PAGE
+     On tablet, the two-column layout (image left,
+     text right) can't breathe at the desktop 5rem
+     gap. We stack them vertically instead.
+  ───────────────────────────────────────────── */
+
+  .who-grid {
+    grid-template-columns: 1fr; /* 2 cols → 1 col: image stacks above the copy text */
+    gap: 4rem;                  /* Breathing room between the stacked image and text blocks */
+  }
+
+  .who-image {
+    position: relative; /* Keep relative so the badge absolute positioning still works */
+    overflow: visible;  /* Let the badge bleed slightly outside if needed */
+  }
+
+  .who-image-main {
+    aspect-ratio: 16/9; /* Landscape crop — natural and wide on a tablet full-width layout */
+    border-radius: 4px; /* Maintain the subtle corner rounding from desktop */
+    width: 100%;        /* Image fills the full container width */
+  }
+
+  .who-image-badge {
+    bottom: -1rem;       /* Pull badge slightly upward from its desktop -1.5rem position */
+    left: auto;          /* Remove the left offset — badge will use right positioning */
+    right: 1.5rem;       /* Pin badge to bottom-right inside the image area */
+    min-width: 140px;    /* Compact badge width for tablet */
+    transform: scale(0.9); /* Subtly scale down so the badge doesn't dominate */
+  }
+
+  .who-badge-num {
+    font-size: 2.2rem; /* Scale the year number down from desktop's 2.8rem */
+  }
+
+  .who-badge-label {
+    font-size: 0.72rem; /* Keep the "Incorporated" label text small and uppercase */
+  }
+
+  .who-features {
+    grid-template-columns: 1fr 1fr; /* Keep the 2-col feature list — fits well on tablet */
+    gap: 0.9rem;                    /* Slightly tighter spacing between feature items */
+  }
+
+  .who-feature p {
+    font-size: 0.9rem; /* Feature label text size — slightly smaller for the compact grid */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     PRODUCTS PREVIEW — INDEX PAGE
+     Desktop shows 4 columns. Tablet drops to 2
+     so each card has enough width to be readable.
+  ───────────────────────────────────────────── */
+
+  .products-preview .section-inner > div:first-child {
+    display: flex !important;        /* Use flex for the header row (title + "View All" link) */
+    flex-direction: column !important; /* Stack heading block above the "View All" link */
+    align-items: flex-start !important; /* Left-align both stacked items */
+    gap: 1rem !important;            /* Space between the heading block and button */
+    margin-bottom: 2rem !important;  /* Space below the header row before the product grid */
+  }
+
+  .products-preview .section-inner > div:first-child .section-title {
+    margin-bottom: 0.5rem !important; /* Tighten space under the headline on tablet */
+  }
+
+  .prod-grid {
+    grid-template-columns: repeat(2, 1fr); /* 4 cols → 2 cols on tablet */
+    gap: 1px;                              /* Keep the fine border-like separator lines */
+  }
+
+  .prod-card {
+    padding: 1.5rem; /* Comfortable card padding on tablet */
+  }
+
+  .prod-icon {
+    width: 44px;  /* Slightly smaller product icon circles on tablet */
+    height: 44px; /* Keep square aspect for the circular icon shape */
+  }
+
+  .prod-name {
+    font-size: 1.05rem; /* Product card name — slightly smaller than desktop (1.15rem) */
+  }
+
+  .prod-origin {
+    font-size: 0.72rem; /* Origin subtitle — keep it subdued on tablet */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     WHY CHOOSE US — INDEX PAGE
+     Desktop shows 4 cards in a row. Tablet gets
+     a clean 2×2 grid layout.
+  ───────────────────────────────────────────── */
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr); /* 4 cols → 2×2 grid on tablet */
+    gap: 1.25rem;                          /* Gap between the 4 reason cards */
+    margin-top: 2.5rem;                    /* Space between the heading and card grid */
+  }
+
+  .why-card {
+    padding: 1.75rem; /* Slightly less padding than desktop (2rem) on tablet */
+  }
+
+  .why-icon {
+    width: 46px;       /* Scale the icon circle slightly down on tablet */
+    height: 46px;      /* Keep the height equal to width for the circle */
+    font-size: 1.2rem; /* Scale the emoji icon inside */
+  }
+
+  .why-title {
+    font-size: 1.15rem; /* Card title — between desktop (1.25rem) and mobile */
+  }
+
+  .why-desc {
+    font-size: 0.875rem; /* Card body copy — same as desktop since cards are wider */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     CTA BANNER — ALL PAGES
+     The gold call-to-action strip across all pages.
+  ───────────────────────────────────────────── */
+
+  .cta-banner {
+    padding: 4rem 0; /* Slightly less than desktop (5rem) but more than mobile (3.5rem) */
+  }
+
+  .cta-banner h2 {
+    font-size: 2.2rem; /* Scale the large banner headline down from desktop's 2.8rem */
+    padding: 0 2.5rem; /* Add horizontal padding so text aligns with section gutters */
+  }
+
+  .cta-banner p {
+    font-size: 0.95rem; /* Proportional body text for the CTA description */
+    padding: 0 2.5rem;  /* Consistent horizontal padding matching the h2 */
+  }
+
+  .btn-dark {
+    padding: 0.9rem 2rem; /* Comfortable tap-target size for the dark CTA button */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     ABOUT PAGE — HERO SECTION
+     ┌──────────────────────────────────────────┐
+     │  HERO IMAGE HIDDEN ON TABLET             │
+     │  .about-hero-image is absolutely placed  │
+     │  at right: 0, bottom: -6rem, 500px wide. │
+     │  On tablet it bleeds over the heading    │
+     │  and covers the trust-bar stats. It      │
+     │  cannot render properly here. We hide it │
+     │  and let the text take the full width    │
+     │  just like the mobile treatment.         │
+     └──────────────────────────────────────────┘
+  ───────────────────────────────────────────── */
+
+  .about-hero-image {
+    display: none !important; /* ← HERO IMAGE HIDDEN ON TABLET (About page) */
+  }
+
+  .about-hero {
+    padding: 7rem 0 5rem; /* Top: clears the fixed nav + breathing room. Bottom: clean close */
+    position: relative;   /* Keep relative so child z-index layering still works */
+    overflow: hidden;     /* Clip any accidental overflow now the image is removed */
+  }
+
+  .about-hero-inner {
+    padding: 0 2.5rem; /* Match tablet gutters for the about hero inner container */
+  }
+
+  .about-hero-text {
+    max-width: 100%; /* Text takes the full width — no image competing for space */
+    position: relative; /* Keep stacking context for z-index: 2 in the original rule */
+    z-index: 2;         /* Maintain the z-index so text is always above the ::before gradient */
+  }
+
+  .about-hero h1 {
+    font-size: 3rem;   /* Scale the headline from desktop clamp(2.5rem, 5vw, 4.5rem) */
+    line-height: 1.15; /* Tight but readable for the 3-line heading */
+    max-width: 560px;  /* Prevent headline from spanning too wide on large tablets */
+  }
+
+  .about-hero p {
+    font-size: 0.95rem; /* Slightly smaller body text in the About hero section */
+    line-height: 1.8;   /* Comfortable reading rhythm */
+    max-width: 580px;   /* Contain paragraph width for readability */
+  }
+
+  .trust-bar {
+    display: flex;         /* Keep trust stats in a horizontal row on tablet */
+    flex-direction: row;   /* Side by side — there's enough room on tablet */
+    gap: 2.5rem;           /* Space between "Incorporated 2024" and "Import / Export" */
+    margin-top: 2.5rem;    /* Space below the paragraph before the trust stats */
+    flex-wrap: wrap;       /* Wrap if content is too wide on smaller tablets */
+  }
+
+  .trust-item {
+    flex-direction: column; /* Stack each label above its value vertically */
+    gap: 0.25rem;           /* Small gap between label and value */
+  }
+
+  .trust-label {
+    font-size: 0.7rem; /* Keep the label text compact and uppercase-readable */
+  }
+
+  .trust-value {
+    font-size: 1.3rem; /* The gold stat value — between desktop (1.4rem) and mobile (1.15rem) */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     ABOUT PAGE — BODY (Our Story + MVV Cards)
+     Desktop is 2-col text layout. On tablet both
+     columns are text-heavy and too narrow to read
+     comfortably side by side — stack them.
+  ───────────────────────────────────────────── */
+
+  .about-body {
+    padding: 4rem 0; /* Match global tablet section padding */
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr; /* 2 cols → 1 col: story text stacks above MVV cards */
+    gap: 3rem;                  /* Space between the stacked Our Story text and MVV cards */
+  }
+
+  .about-text p {
+    font-size: 0.95rem; /* Match global tablet body text size */
+    line-height: 1.85;  /* Slightly relaxed for long-form paragraphs */
+  }
+
+  .mvv-grid {
+    grid-template-columns: 1fr; /* MVV cards stack in a single column (already default) */
+    gap: 1.25rem;               /* Spacing between Mission and Vision cards */
+  }
+
+  .mvv-card {
+    padding: 1.5rem 2rem; /* Slightly tighter horizontal padding on tablet */
+  }
+
+  .mvv-label {
+    font-size: 0.7rem; /* Small all-caps label above Mission/Vision body copy */
+  }
+
+  .mvv-text {
+    font-size: 0.9rem;  /* Body text inside the Mission/Vision cards */
+    line-height: 1.75;  /* Comfortable line spacing for the longer paragraphs */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     ABOUT PAGE — VALUES SECTION
+  ───────────────────────────────────────────── */
+
+  .values-section {
+    padding: 4rem 0; /* Match tablet section rhythm */
+  }
+
+  .values-text {
+    font-size: 0.95rem; /* Values section body text */
+    line-height: 1.85;  /* Relaxed reading rhythm for the longer values paragraphs */
+    max-width: 100%;    /* Full width since it's a single text block on dark bg */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     ABOUT PAGE — PURITY SECTION
+     Desktop: text left, image right (2 cols).
+     On tablet, the 4/5 aspect image at half-width
+     looks too tall. Stack instead.
+  ───────────────────────────────────────────── */
+
+  .purity-section {
+    padding: 4rem 0; /* Match tablet section rhythm */
+  }
+
+  .purity-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.1fr !important; /* Side-by-side: Image gets slightly more room */
+    align-items: center !important;             /* Keeps text and image vertically centered */
+    gap: 4rem !important;                       /* Wide gap for an editorial look */
+  }
+
+  .purity-image {
+    aspect-ratio: 4/5;   /* Slightly taller than square looks better for side-by-side */
+    border-radius: 12px; /* Matches your other mobile/tablet containers */
+    width: 100% !important;
+    overflow: hidden;
+  }
+
+  .purity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  /* ─────────────────────────────────────────────
+     ABOUT PAGE — WHAT SETS US APART
+     Desktop: 3 cols. Tablet: 2 cols (third card
+     wraps to the next row — cleaner than 1 col
+     which wastes the available width).
+  ───────────────────────────────────────────── */
+
+  .apart-grid {
+    grid-template-columns: repeat(2, 1fr); /* 3 cols → 2 cols — 3rd card wraps cleanly */
+    gap: 1.25rem;                          /* Consistent gap between apart cards */
+    margin-top: 2.5rem;                    /* Space between heading and the card grid */
+  }
+
+  .apart-card {
+    padding: 1.75rem; /* Comfortable card padding on tablet */
+  }
+
+  .apart-num {
+    font-size: 2.5rem; /* Scale the decorative number (01, 02, 03) slightly */
+  }
+
+  .apart-title {
+    font-size: 1.05rem; /* Card title size — compact but readable */
+  }
+
+  .apart-desc {
+    font-size: 0.87rem; /* Card body text — slightly smaller for the compact cards */
+    line-height: 1.65;  /* Comfortable line spacing */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     PRODUCTS PAGE — HERO
+     Text-only hero, no floating image to worry
+     about. Follows the same auto-height pattern.
+  ───────────────────────────────────────────── */
+
+  .products-hero {
+    padding: 7rem 0 5rem; /* Top: nav clearance + breathing. Bottom: clean close */
+  }
+
+  .products-hero h1 {
+    font-size: 3rem;  /* Scale from desktop clamp(2.5rem, 5vw, 4rem) */
+    line-height: 1.2; /* Tight line height for the two-line heading */
+  }
+
+  .products-hero p {
+    font-size: 0.95rem; /* Supporting text under the Products headline */
+    line-height: 1.75;  /* Comfortable reading rhythm */
+    max-width: 480px;   /* Keep paragraph from stretching too wide */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     PRODUCTS PAGE — ALL PRODUCTS GRID
+     Desktop: 3 cols. Tablet: 2 cols — each card
+     has more room and the image renders well.
+  ───────────────────────────────────────────── */
+
+  .all-products {
+    padding: 4rem 0; /* Match tablet section rhythm */
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 3 cols → 2 cols on tablet */
+    gap: 1.25rem;                          /* Gap between the product cards */
+    margin-top: 2rem;                      /* Space above the card grid */
+  }
+
+  .product-card {
+    border-radius: 10px; /* Slightly less rounding than desktop (12px) on tablet */
+  }
+
+  .product-img {
+    height: 200px; /* Keep same height as desktop — cards are wide enough */
+  }
+
+  .product-img img {
+    width: 100%;       /* Fill the image container */
+    height: 100%;      /* Fill the image container vertically */
+    object-fit: cover; /* Cover without distortion */
+    display: block;    /* Remove inline gap */
+  }
+
+  .product-name {
+    font-size: 1.3rem; /* Product card title — comfortable on tablet */
+  }
+
+  .product-teaser {
+    font-size: 0.9rem;  /* Slightly smaller teaser text in product cards */
+    line-height: 1.55;  /* Comfortable line spacing for the clamped 3-line teaser */
+  }
+
+  .product-body {
+    padding: 1.4rem; /* Slightly tighter card body padding */
+  }
+
+  .product-link {
+    font-size: 0.78rem; /* "View Details" link — keep it subtle */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     PRODUCT MODAL
+     On tablet the modal is centered and uses
+     most of the screen — not a bottom-sheet.
+  ───────────────────────────────────────────── */
+
+  .modal-overlay {
+    padding: 2rem;          /* Padding around the modal on tablet */
+    align-items: center;    /* Vertically center the modal in the overlay */
+    justify-content: center; /* Horizontally center as well */
+  }
+
+  .modal {
+    max-width: 680px;    /* Contained modal width — doesn't need to be full width */
+    max-height: 85vh;    /* Allow the modal to use 85% of the viewport height */
+    border-radius: 8px;  /* Rounded corners on all sides (not bottom-sheet on tablet) */
+    width: 100%;         /* Responsive width within the max-width constraint */
+    overflow-y: auto;    /* Scroll inside the modal when content is long */
+  }
+
+  .modal-header {
+    padding: 2.5rem 2.5rem 0; /* Generous header padding on tablet */
+  }
+
+  .modal-title {
+    font-size: 2rem; /* Scale the modal product title appropriately for tablet */
+  }
+
+  .modal-desc {
+    font-size: 0.9rem;  /* Slightly smaller modal description text */
+    line-height: 1.8;   /* Comfortable reading rhythm for product details */
+  }
+
+  .modal-highlights {
+    padding: 0 2.5rem 2.5rem; /* Match the header padding for visual consistency */
+  }
+
+  .modal-close {
+    top: 1.2rem;  /* Keep close button in a comfortable tap zone */
+    right: 1.2rem; /* Positioned in the top-right corner of the modal */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     CONTACT PAGE — HERO
+     Text-only hero. Same auto-height treatment.
+  ───────────────────────────────────────────── */
+
+  .contact-hero {
+    padding: 7rem 0 5rem; /* Top: nav clearance. Bottom: comfortable close */
+  }
+
+  .contact-hero h1 {
+    font-size: 3rem;  /* Scale from desktop clamp(2.5rem, 5vw, 4rem) */
+    line-height: 1.2; /* Tight for the two-line heading */
+  }
+
+  .contact-hero p {
+    font-size: 0.95rem; /* Supporting paragraph under the Contact headline */
+    line-height: 1.75;  /* Comfortable reading rhythm */
+    max-width: 500px;   /* Keep paragraph from stretching too wide */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     CONTACT PAGE — CONTACT SECTION
+     Desktop: 5fr 4fr two-column (form + info).
+     Tablet: Stack form above info cards since the
+     columns are too narrow to be comfortable.
+  ───────────────────────────────────────────── */
+
+  .contact-section {
+    padding: 4rem 0; /* Match tablet section rhythm */
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr; /* 2-col → single column: form stacks above info */
+    gap: 3rem;                  /* Space between the stacked form and contact info block */
+  }
+
+  .contact-info {
+    display: flex;        /* Use flex to lay out the info cards */
+    flex-direction: row;  /* Lay cards side by side on tablet — there's width for this */
+    flex-wrap: wrap;      /* Wrap to a new row if cards don't all fit */
+    gap: 1rem;            /* Gap between each contact info card */
+    margin-top: 0;        /* Remove the 9.7rem margin that's only needed on desktop */
+    align-items: stretch; /* Make all info cards the same height */
+  }
+
+  .contact-info-card {
+    flex: 1 1 220px; /* Each card grows/shrinks with a 220px base — 2-3 per row */
+    min-width: 0;    /* Prevent flex items from overflowing their container */
+  }
+
+  .ci-label {
+    font-size: 0.7rem; /* Keep the info card label text compact */
+  }
+
+  .ci-value {
+    font-size: 0.95rem; /* Slightly smaller info value text on tablet */
+  }
+
+  .ci-sub {
+    font-size: 0.82rem; /* Sub-label text inside the contact info cards */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     CONTACT PAGE — FORM
+  ───────────────────────────────────────────── */
+
+  .form-row {
+    grid-template-columns: 1fr 1fr; /* Keep First Name / Last Name side by side on tablet */
+    gap: 1rem;                      /* Gap between the two name input fields */
+  }
+
+  .form-group {
+    margin-bottom: 1.4rem; /* Spacing between each form field on tablet */
+  }
+
+  .form-group label {
+    font-size: 0.76rem; /* Keep form labels compact and uppercase-readable */
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.95rem; /* Input text size — above 16px threshold to avoid iOS zoom */
+    padding: 0.85rem 1rem; /* Comfortable tap-target height with tighter side padding */
+  }
+
+  .form-group textarea {
+    min-height: 130px; /* Slightly shorter textarea on tablet (desktop is 140px) */
+  }
+
+  .region-tag {
+    font-size: 0.78rem; /* Region pill tag text — slightly smaller on tablet */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     FOOTER
+     Desktop: 4-col grid (2fr 1fr 1fr 1.5fr).
+     Tablet: 2×2 grid — cleaner balance than 4-col
+     which would make each column very narrow.
+  ───────────────────────────────────────────── */
+
+  footer {
+    padding: 4rem 0 2rem; /* Slightly tighter footer vertical padding on tablet */
+  }
+
+  .footer-inner {
+    padding: 0 2.5rem; /* Match tablet gutters in the footer inner container */
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 4 cols → 2×2 grid on tablet */
+    gap: 2.5rem;                           /* Space between the 4 footer column blocks */
+    margin-bottom: 2.5rem;                 /* Space below the grid before footer-bottom */
+  }
+
+  .footer-brand {
+    font-size: 1.65rem; /* Slightly smaller footer wordmark on tablet */
+    margin-bottom: 0.8rem; /* Space between the wordmark and the tagline below */
+  }
+
+  .footer-desc {
+    font-size: 0.85rem; /* Footer tagline text — compact and readable */
+    max-width: 100%;    /* Full column width since the column is narrower on tablet */
+    line-height: 1.7;   /* Comfortable line spacing for the tagline */
+  }
+
+  .footer-col h5 {
+    font-size: 0.73rem;   /* Footer column heading label — small, uppercase, gold */
+    margin-bottom: 0.9rem; /* Space between the heading and the links below */
+  }
+
+  .footer-col a,
+  .footer-col p {
+    font-size: 0.85rem;    /* Footer links and contact text */
+    margin-bottom: 0.55rem; /* Spacing between each footer link */
+  }
+
+  .footer-bottom {
+    display: flex;           /* Flex row for the copyright and the Creativo badge */
+    flex-direction: row;     /* Keep them side by side on tablet */
+    justify-content: space-between; /* Push copyright to the left, badge to the right */
+    align-items: center;     /* Vertically center both items */
+    gap: 1rem;               /* Fallback gap if justify-content doesn't apply */
+    padding-top: 1.5rem;     /* Space above the footer-bottom divider line */
+    flex-wrap: wrap;         /* Wrap to column if the screen is too narrow */
+  }
+
+  .footer-copy {
+    font-size: 0.8rem; /* Copyright text — small and subdued */
+  }
+
+  .sdg-badge span,
+  .sdg-badge strong {
+    font-size: 0.75rem; /* "Web design by Creativo" badge text — compact on tablet */
+  }
+
+
+} /* end @media (min-width: 768px) and (max-width: 1024px) */
+
+
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ████████  SMALL TABLET TWEAK  ░░  min-width: 768px  —  max-width: 834px
+   ──────────────────────────────────────────────────────────────────────────────
+   This targets the narrower end of the tablet range:
+     ▸ iPad mini (6th gen)   →  744px portrait (applied just above)
+     ▸ Older iPad models     →  768px portrait
+     ▸ Samsung Tab S6 Lite   →  800px portrait
+   At these widths, some of the tablet rules above still feel slightly cramped.
+   These overrides tighten things up where needed.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 834px) {
+
+
+  /* ─────────────────────────────────────────────
+     GLOBAL — GUTTERS ON NARROW TABLETS
+  ───────────────────────────────────────────── */
+
+  .section-inner {
+    padding: 0 1.75rem; /* Slightly tighter gutters on narrower tablet screens */
+  }
+
+  .nav-inner {
+    padding: 0 1.75rem; /* Match the tightened gutters in the nav bar */
+  }
+
+  .footer-inner {
+    padding: 0 1.75rem; /* Match gutters in the footer on narrow tablets */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     HERO — INDEX PAGE (Narrow Tablet)
+  ───────────────────────────────────────────── */
+
+  .hero-content {
+    padding: 0 1.75rem; /* Match tighter gutters for the hero text block */
+  }
+
+  .hero h1 {
+    font-size: 2.8rem; /* Step down the headline slightly on narrower tablets */
+  }
+
+  .hero-sub {
+    max-width: 100%; /* Full width on narrow tablets since the image is hidden */
+  }
+
+  .hero-btns {
+    flex-direction: column; /* Stack buttons vertically on narrow tablets */
+    gap: 0.75rem;           /* Space between the two stacked CTA buttons */
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;        /* Full-width buttons for comfortable tapping */
+    text-align: center; /* Center the button label text */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     ABOUT HERO — NARROW TABLET
+  ───────────────────────────────────────────── */
+
+  .about-hero-inner {
+    padding: 0 1.75rem; /* Match tighter gutters in the about hero */
+  }
+
+  .about-hero h1 {
+    font-size: 2.6rem; /* Slightly smaller headline on narrow tablets */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     PRODUCTS GRID — NARROW TABLET
+     At 768–834px, 2-col cards can feel slightly
+     cramped. The cards still work at 2-col but
+     we tighten the body padding.
+  ───────────────────────────────────────────── */
+
+  .product-body {
+    padding: 1.2rem; /* Tighter card body padding on narrow tablets */
+  }
+
+  .product-name {
+    font-size: 1.2rem; /* Slightly smaller card title on narrower screens */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     APART GRID — NARROW TABLET
+     At 768–834px, the 2-col apart grid can have
+     very narrow cards. Let them stack to 1 col.
+  ───────────────────────────────────────────── */
+
+  .apart-grid {
+    grid-template-columns: 1fr; /* 2 cols → 1 col on narrow tablets */
+    gap: 1rem;                  /* Tighter gap between the now-stacked cards */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     CONTACT — NARROW TABLET
+     The side-by-side info cards don't have enough
+     room at this width. Stack them vertically.
+  ───────────────────────────────────────────── */
+
+  .contact-info {
+    flex-direction: column; /* Stack info cards vertically on narrow tablets */
+  }
+
+  .contact-info-card {
+    flex: none;  /* Remove the flex-grow from the wider tablet rule */
+    width: 100%; /* Each card uses the full column width */
+  }
+
+
+  /* ─────────────────────────────────────────────
+     FOOTER — NARROW TABLET
+     At this width the 2×2 footer grid columns
+     are narrow. Stack to 1 col for clean reading.
+  ───────────────────────────────────────────── */
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* Keep 2-col — columns are still readable at 768px */
+    gap: 2rem;                      /* Slightly tighter gap on narrow tablets */
+  }
+
+  .footer-bottom {
+    flex-direction: column;  /* Stack copyright and badge vertically on narrow tablets */
+    align-items: flex-start; /* Left-align both footer-bottom items */
+    gap: 0.75rem;            /* Small gap between the two stacked items */
+  }
+
+
+} /* end @media (min-width: 768px) and (max-width: 834px) */
