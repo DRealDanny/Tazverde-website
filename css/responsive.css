@@ -381,17 +381,20 @@
   }
 
   .hero {
-    height: auto;        /* Override fixed 100vh — let content dictate height */
-    min-height: 100svh;  /* Use short viewport height for a clean full-screen feel */
-    padding-bottom: 5rem; /* Bottom padding to clear dots & ensure content fits */
-  }
+    height: auto !important;
+    min-height: auto !important;   /* This kills the forced full-screen gap */
+    
+    /* ─── YOUR CONTROLS ─── */
+    padding-top: 6.3rem !important;    /* Adjust this for the space at the TOP */
+    padding-bottom: 5rem !important; /* Adjust this for the space at the BOTTOM */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    /* Ensures content starts from the top padding */
+ }
 
   .hero-bg {
     display: block; /* Keep the dark green gradient background visible */
-  }
-
-  .hero-pattern {
-    display: none; /* Hide the subtle grid pattern on small screens to reduce noise */
   }
 
   .hero-content {
@@ -400,16 +403,16 @@
   }
 
   .hero h1 {
-    font-size: 2.4rem;  /* Mobile-specific headline size (overrides global h1) */
+    font-size: 2.8rem;  /* Mobile-specific headline size (overrides global h1) */
     line-height: 1.15;  /* Slightly looser than h1 global to handle line breaks */
   }
 
   .hero-tag {
-    margin-bottom: 1.2rem; /* Tighten space between the tag badge and the headline */
+    margin-bottom: 1rem; /* Tighten space between the tag badge and the headline */
   }
 
   .hero-tag span {
-    font-size: 0.7rem; /* Make the tag label text smaller on narrow screens */
+    font-size: 0.5rem; /* Make the tag label text smaller on narrow screens */
   }
 
   .hero-sub {
