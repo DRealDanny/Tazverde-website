@@ -906,18 +906,18 @@
   }
 
   .footer-desc {
-    font-size: 0.82rem; /* Slightly smaller footer tagline text */
+    font-size: 1rem; /* Slightly smaller footer tagline text */
     max-width: 100%;    /* Let the description use full column width */
   }
 
   .footer-col h5 {
-    font-size: 0.7rem; /* Scale column heading labels down */
+    font-size: 0.9rem; /* Scale column heading labels down */
     margin-bottom: 0.75rem; /* Tighten the space below each column heading */
   }
 
   .footer-col a,
   .footer-col p {
-    font-size: 0.82rem;    /* Smaller footer link and text on mobile */
+    font-size: 0.94rem;    /* Smaller footer link and text on mobile */
     margin-bottom: 0.5rem; /* Tighter spacing between footer links */
   }
 
@@ -929,16 +929,17 @@
   }
 
   .footer-copy {
-    font-size: 0.75rem; /* Slightly smaller copyright text on mobile */
+    font-size: 0.9rem; /* Slightly smaller copyright text on mobile */
   }
 
   .sdg-badge {
     padding: 0.35rem 0.75rem; /* Slightly more compact badge on mobile */
+    margin-bottom: 0.9rem; /* Slightly more margin below on compact badge on mobile */
   }
 
   .sdg-badge span,
   .sdg-badge strong {
-    font-size: 0.72rem; /* Scale the "Web design by Creativo" badge text */
+    font-size: 0.8rem; /* Scale the "Web design by Creativo" badge text */
   }
 
 
