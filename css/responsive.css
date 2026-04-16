@@ -452,7 +452,7 @@
   }
 
   .who-image-main {
-    aspect-ratio: 16/9; /* Wider, shorter image on mobile feels more natural */
+    aspect-ratio: 3/4; /* Wider, shorter image on mobile feels more natural */
     border-radius: 4px; /* Keep the subtle rounding */
   }
 
@@ -499,12 +499,21 @@
     font-size: 0.7rem; /* Smaller origin label to fit in the compact 2-col cards */
   }
 
-  /* Products header row — stacks the title and "View All" link */
-  .products-preview .section-inner > div:first-child {
-    flex-direction: column; /* Stack "Our Products" heading above the "View All" link */
-    align-items: flex-start; /* Left-align both stacked items */
-    gap: 1rem;               /* Space between heading block and the button */
-  }
+  /* Products header row — aligned left to match Who page margins */
+.products-preview .section-inner > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Pulls the layout to the left edge */
+    text-align: left !important;        /* Forces the text lines to the left */
+    width: 100% !important;
+    margin-left: 0 !important;          /* Ensures it hugs the container edge */
+    padding-left: 0 !important;
+}
+/* Breathing space below the "Globally Delivered" headline */
+.products-preview .section-inner > div:first-child h2,
+.products-preview .section-inner > div:first-child .section-title {
+    margin-bottom: 1.5rem !important; /* Increase this number if you want even more space */
+}
 
 
   /* ─────────────────────────────────────────────
@@ -660,7 +669,7 @@
   }
 
   .purity-image {
-    aspect-ratio: 16/9; /* Wider, shorter image container for mobile */
+    aspect-ratio: 3/4; /* Wider, shorter image container for mobile */
     border-radius: 4px; /* Keep the subtle rounding */
   }
 
@@ -760,7 +769,7 @@
 
   .modal-overlay {
     padding: 1rem; /* Reduce overlay padding so the modal has more space */
-    align-items: flex-end; /* Snap the modal to the bottom of the screen */
+    align-items: center; /* Snap the modal to the bottom of the screen */
   }
 
   .modal {
