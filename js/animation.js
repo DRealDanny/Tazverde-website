@@ -104,6 +104,31 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     delay    : 0.38,
   });
 
+  /* ══════════════════════════════════════════════════════════════════════════
+     MOBILE MENU: Click Animation
+     Fires a rapid vertical stagger reveal when the hamburger icon is clicked
+  ══════════════════════════════════════════════════════════════════════════ */
+  const hamburger = get('.hamburger');
+  const navContainer = get('.nav-links');
+
+  if (hamburger && navContainer) {
+    hamburger.addEventListener('click', () => {
+      /* A tiny 10ms delay allows script.js to toggle the '.active' CSS class 
+         first, ensuring the container is visible before GSAP animates the text */
+      setTimeout(() => {
+        if (navContainer.classList.contains('active')) {
+          gsap.from('.nav-links a', {
+            opacity: 0,
+            y: 15,            /* Adheres to Rule #5: y-axis lift only */
+            duration: 0.4,    /* Fast and snappy */
+            ease: 'power2.out',
+            stagger: 0.06,    /* Cascades the links one after another */
+            clearProps: 'opacity,transform'
+          });
+        }
+      }, 10);
+    });
+  }
 
   /* ══════════════════════════════════════════════════════════════════════════
      INDEX HERO — sequence on page load
@@ -146,6 +171,19 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         clearProps: 'opacity,transform',
       }, '-=0.3');
 
+      /* ─── INDEX HERO: Image Slider Reveal ──────────────────────────────────── */
+  /* This targets the slider container on desktop only */
+  if (get('.hero-image-slider') && window.innerWidth > 1024) {
+    gsap.from('.hero-image-slider', {
+      opacity: 0,
+      scale: 1.05,        /* Subtle zoom-out effect */
+      y: 20,              /* Gentle slide up */
+      duration: 1.2,
+      ease: 'power3.out',
+      delay: 0.6,         /* Fires just after the h1 starts to appear */
+      clearProps: 'opacity,transform'
+    });
+  }
   }
 
 
@@ -189,6 +227,18 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         clearProps: 'opacity,transform',
       }, '-=0.3');
 
+      /* ─── ABOUT HERO: Image Reveal ─────────────────────────────────────────── */
+  /* Targets the main hero image on the About page */
+  if (get('.about-hero-image') && window.innerWidth > 1024) {
+    gsap.from('.about-hero-image', {
+      opacity: 0,
+      x: 30,              /* Slides in from the right to meet the text */
+      duration: 1,
+      ease: 'power2.out',
+      delay: 0.8,
+      clearProps: 'opacity,transform'
+    });
+  }
   }
 
 
