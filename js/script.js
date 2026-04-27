@@ -331,3 +331,46 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ACTIVE NAV HIGHLIGHTER (Hostinger-Proof)
+   Automatically detects the current page and highlights the menu link.
+══════════════════════════════════════════════════════════════════════════ */
+function highlightActiveNav() {
+    // 1. Get the current URL path
+    let currentPath = window.location.pathname;
+    let pageName = currentPath.split('/').pop(); 
+    
+    // 2. If it's the root domain (e.g., tazverde.com/), default to 'index'
+    if (pageName === '' || pageName === '/') {
+        pageName = 'index';
+    }
+
+    // 3. Clean the current page name (removes .html for server compatibility)
+    let cleanCurrent = pageName.replace('.html', '').toLowerCase();
+
+    // 4. Find ALL links in the header/nav (Catches both Desktop and Mobile Canvas)
+    const navLinks = document.querySelectorAll('header a, nav a, .nav-links a');
+    
+    navLinks.forEach(link => {
+        let linkHref = link.getAttribute('href');
+        
+        if (linkHref) {
+            // Clean the link href the exact same way
+            let cleanHref = linkHref.replace('.html', '').toLowerCase();
+            
+            // If the link is just "/" or empty, treat it as "index"
+            if (cleanHref === '' || cleanHref === '/') {
+                cleanHref = 'index';
+            }
+            
+            // 5. If they match AND it's not the CTA button, add the active class!
+            if (cleanCurrent === cleanHref && !link.classList.contains('nav-cta')) {
+                link.classList.add('active-nav');
+            }
+        }
+    });
+}
+
+// Run the function as soon as the page loads
+document.addEventListener('DOMContentLoaded', highlightActiveNav);
