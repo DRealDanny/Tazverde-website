@@ -37,7 +37,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TazVerde | Admin Access</title>
+    <title>Admin Access</title>
     <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
