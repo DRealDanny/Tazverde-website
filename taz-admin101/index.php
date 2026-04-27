@@ -38,6 +38,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TazVerde | Admin Access</title>
+    <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --green-dark: #0a1f11; --gold: #c8973a; --white: #ffffff; --glass-bg: rgba(255, 255, 255, 0.85); --glass-border: rgba(255, 255, 255, 0.2); }
@@ -117,6 +118,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TazVerde CMS | Dashboard</title>
+    <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --green: #0a1f11; --gold: #c8973a; --bg: #f4f7f5; --text: #333; --border: #e0e6e2; }
