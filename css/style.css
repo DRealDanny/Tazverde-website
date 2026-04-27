@@ -487,3 +487,11 @@ footer{background:var(--green-dark);padding:4rem 0 2rem;}
   .hamburger.active .bar:nth-child(2) { opacity: 0; }
   .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: #ffffff; }
 }
+
+/* ─── OFFICIAL BRAND LOGO SIZING ─── */
+.brand-logo-img {
+    height: 38px; /* You can increase or decrease this to perfectly size the logo */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
