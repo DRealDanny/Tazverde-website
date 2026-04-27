@@ -1,7 +1,7 @@
 {
     "global_settings": {
         "contact_email": "info@tazverde.com",
-        "contact_phone": "+234 111 222 3333",
+        "contact_phone": "+234 345 566 6687",
         "contact_response_time": "We respond within 24 hours"
     },
     "products": [
@@ -23,28 +23,6 @@
                     {
                         "title": "Applications",
                         "text": "Premium baking, artisanal ice cream, luxury perfumes."
-                    }
-                ]
-            }
-        },
-        {
-            "id": "cocoa-beans",
-            "name": "Cocoa Beans",
-            "teaser": "Rich, sun-dried African cocoa sourced directly from sustainable farms.",
-            "image": "assets\/images\/cocoa-beans.png",
-            "color_class": "pc-cocoa",
-            "modal": {
-                "tag": "Export Quality",
-                "title": "Cocoa Beans",
-                "desc": "Sourced directly from sustainable farms across West Africa, our cocoa beans offer a deep, robust flavor profile.",
-                "highlights": [
-                    {
-                        "title": "Flavor Profile",
-                        "text": "Deep, earthy chocolate notes with a hint of fruitiness."
-                    },
-                    {
-                        "title": "Applications",
-                        "text": "High-end chocolate production and baking applications."
                     }
                 ]
             }

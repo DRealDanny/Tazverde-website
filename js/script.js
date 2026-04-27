@@ -210,7 +210,7 @@ let globalProducts = []; // Stores our products
 
 async function initDatabase() {
     try {
-        const response = await fetch('content.json');
+        const response = await fetch('/content.json', { cache: 'no-store' });
         const data = await response.json();
 
         // 1. Update Email and Phone on the website
