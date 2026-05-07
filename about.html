@@ -4,41 +4,40 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About Us - TazVerde LTD</title>
-    <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/mobile-res.css">
-<link rel="stylesheet" href="css/tablet-res.css">
+<link rel="stylesheet" href="css/mobile-res.css" media="(max-width: 767px)">
+<link rel="stylesheet" href="css/tablet-res.css" media="(min-width: 768px) and (max-width: 1024px)">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-inner">
     <a class="logo" href="/">
-      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img">
+      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img" width="120" height="38">
     </a>
-    
     <div class="nav-links" id="nav-menu">
       <a href="/">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════ ABOUT PAGE ═══════════════════════════════ -->
 <div class="page active" id="page-about">
   <section class="about-hero">
     <div class="section-inner about-hero-inner">
-      
       <div class="about-hero-text">
         <div class="section-label"><span>About TazVerde</span></div>
         <h1>Clean Trade.<br><em>Ethical Roots.</em><br>Global Vision.</h1>
@@ -48,12 +47,10 @@
           <div class="trust-item"><div class="trust-label">Business Type</div><div class="trust-value">Import / Export</div></div>
         </div>
       </div>
-
-      <!-- About Hero Image Here -->
+      <!-- Desktop only hero image — lazy since it's partially decorative -->
       <div class="about-hero-image">
-        <img src="assets/images/about-01.png" alt="TazVerde Operations">
+        <img src="assets/images/about-01.png" alt="TazVerde Operations" width="500" height="600" loading="lazy">
       </div>
-
     </div>
   </section>
 
@@ -78,8 +75,7 @@ However, our purpose extends far beyond the produce itself; we exist to empower 
             </div>
             <div class="mvv-card">
               <div class="mvv-label">Our Vision</div>
-              <p class="mvv-text">Our vision is to stand at the forefront of the global agricultural sector as the definitive, trusted brand for clean, ethically sourced food products. We see a future where the phrase "Grown in Africa" is universally recognized as a hallmark of unmatched quality, environmental stewardship, and chemical-free purity. By building a highly transparent and resilient supply chain, we aim to be a primary catalyst for sustainable economic growth across the African continent, transforming local agricultural communities into hubs of global excellence.
-</p>
+              <p class="mvv-text">Our vision is to stand at the forefront of the global agricultural sector as the definitive, trusted brand for clean, ethically sourced food products. We see a future where the phrase "Grown in Africa" is universally recognized as a hallmark of unmatched quality, environmental stewardship, and chemical-free purity. By building a highly transparent and resilient supply chain, we aim to be a primary catalyst for sustainable economic growth across the African continent, transforming local agricultural communities into hubs of global excellence.</p>
             </div>
           </div>
         </div>
@@ -106,8 +102,7 @@ However, our purpose extends far beyond the produce itself; we exist to empower 
           <p class="section-desc">Our ginger and garlic are selected for their pungency, medicinal value, and long shelf life, ideal for everything from wellness infusions to gourmet sauces. We preserve the original flavor, color, and nutrients of our products, offering true value to discerning chefs, food brands, and health-conscious consumers across the globe.</p>
         </div>
         <div class="purity-image">
-          <!-- Swapped SVG for the actual image -->
-          <img src="assets/images/product-integrity.png" alt="Product Integrity">
+          <img src="assets/images/product-integrity.png" alt="Product Integrity" width="500" height="500" loading="lazy">
         </div>
       </div>
       <div style="margin-top:4rem;">
@@ -138,7 +133,6 @@ However, our purpose extends far beyond the produce itself; we exist to empower 
     <div class="section-inner">
       <h2>Interested in a Partnership?</h2>
       <p>Whether you're sourcing for manufacturing, retail, or food service — we have the products you need.</p>
-      <!-- Replaced button with proper link -->
       <a href="contact.html" class="btn-dark">Contact Our Team</a>
     </div>
   </div>
@@ -152,39 +146,37 @@ However, our purpose extends far beyond the produce itself; we exist to empower 
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
-          <!-- Fixed all links -->
-          <a href="/">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="products.html">Products</a>
-          <a href="contact.html">Contact</a>
+          <a href="/">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
           <h5>Products</h5>
-          <!-- Fixed all links -->
-          <a href="products.html">Vanilla Pods</a>
-          <a href="products.html">Coffee Beans</a>
-          <a href="products.html">Cocoa Beans</a>
-          <a href="products.html">Crude Palm Oil</a>
+          <a href="products.html">Vanilla Pods</a><a href="products.html">Coffee Beans</a><a href="products.html">Cocoa Beans</a><a href="products.html">Crude Palm Oil</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
           <a href="mailto:info@tazverde.com">info@tazverde.com</a>
-          <!-- Clickable phone number -->
           <a href="tel:+2344366748892">+234 436 674 8892</a>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 TazVerde LTD. All rights reserved.</div>
-        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration: none; color: inherit;"><span>Web design by</span><strong>Creativo</strong></a>
+        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration:none;color:inherit;"><span>Web design by</span><strong>Creativo</strong></a>
       </div>
     </div>
   </footer>
 </div>
 
-<script src="js/script.js"></script>
+<script defer src="js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="js/animation.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/animation.js"></script>
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
 </body>
 </html>

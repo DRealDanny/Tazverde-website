@@ -4,37 +4,37 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact - TazVerde LTD</title>
-    <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/mobile-res.css">
-<link rel="stylesheet" href="css/tablet-res.css">
+<link rel="stylesheet" href="css/mobile-res.css" media="(max-width: 767px)">
+<link rel="stylesheet" href="css/tablet-res.css" media="(min-width: 768px) and (max-width: 1024px)">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-inner">
     <a class="logo" href="/">
-      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img">
+      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img" width="120" height="38">
     </a>
-    
     <div class="nav-links" id="nav-menu">
       <a href="/">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════ CONTACT PAGE ═══════════════════════════════ -->
 <div class="page active" id="page-contact">
   <section class="contact-hero" style="background:linear-gradient(135deg,#0a1f11 0%,#1b4332 100%);padding:7rem 0 5rem;">
     <div class="section-inner">
@@ -47,16 +47,15 @@
   <section class="contact-section">
     <div class="section-inner">
       <div class="contact-grid">
-        
+
         <div>
           <div class="section-label"><span>Send a Message</span></div>
           <h2 class="section-title" style="margin-bottom:2rem;">Request a <em>Quote</em></h2>
-          
+
           <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
             <input type="hidden" name="access_key" value="fcee8e46-a0cb-4e9f-a2a0-02450c9101c7">
-
             <input type="hidden" name="subject" value="New Inquiry from TazVerde Website">
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
 
             <div class="form-row">
               <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="John" required/></div>
@@ -64,7 +63,7 @@
             </div>
             <div class="form-group"><label>Email Address</label><input type="email" name="Email Address" placeholder="john@company.com" required/></div>
             <div class="form-group"><label>Company / Organisation</label><input type="text" name="Company Name" placeholder="Your Company Name"/></div>
-            
+
             <div class="form-group">
               <label>Product of Interest</label>
               <select name="Product of Interest" required>
@@ -84,11 +83,11 @@
                 <option value="Multiple Products">Multiple Products</option>
               </select>
             </div>
-            
+
             <div class="form-group"><label>Message</label><textarea name="Client Message" placeholder="Tell us about your requirements, quantities, and any other details..." required></textarea></div>
-            
+
             <button type="submit" class="btn-primary" style="width:100%;text-align:center;border:none;cursor:pointer;">Send Enquiry</button>
-            <div id="result" style="margin-top: 1.5rem; font-size: 0.95rem; text-align: center; font-weight: 500;"></div>
+            <div id="result" style="margin-top:1.5rem;font-size:0.95rem;text-align:center;font-weight:500;"></div>
           </form>
         </div>
 
@@ -103,7 +102,6 @@
             <div class="ci-value">Import / Export</div>
             <div class="ci-sub">B2B — Food Manufacturers, Retailers, Distributors</div>
           </div>
-      
           <div class="contact-info-card" style="background:var(--green-dark);border-color:transparent;">
             <div class="ci-label" style="color:var(--gold);">UN SDG Commitment</div>
             <div class="ci-value" style="color:var(--white);">Aligned with SDG 2 — Zero Hunger</div>
@@ -115,7 +113,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
@@ -125,94 +122,80 @@
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
-          <!-- Links converted to real links -->
-          <a href="/">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="products.html">Products</a>
-          <a href="contact.html">Contact</a>
+          <a href="/">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
           <h5>Products</h5>
-          <!-- Links converted to real links -->
-          <a href="products.html">Vanilla Pods</a>
-          <a href="products.html">Coffee Beans</a>
-          <a href="products.html">Cocoa Beans</a>
-          <a href="products.html">Crude Palm Oil</a>
+          <a href="products.html">Vanilla Pods</a><a href="products.html">Coffee Beans</a><a href="products.html">Cocoa Beans</a><a href="products.html">Crude Palm Oil</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
           <a href="mailto:info@tazverde.com">info@tazverde.com</a>
-          <!-- Clickable phone number -->
           <a href="tel:+2344366748892">+234 436 674 8892</a>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 TazVerde LTD. All rights reserved.</div>
-        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration: none; color: inherit;"><span>Web design by</span><strong>Creativo</strong></a>
+        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration:none;color:inherit;"><span>Web design by</span><strong>Creativo</strong></a>
       </div>
     </div>
   </footer>
 </div>
 
-<script src="js/script.js"></script>
+<script defer src="js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="js/animation.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/animation.js"></script>
-
+<!-- Contact form handler — inline so it runs independently of deferred scripts -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('contact-form');
+document.addEventListener('DOMContentLoaded', function() {
+    const form   = document.getElementById('contact-form');
     const result = document.getElementById('result');
+    if (!form) return;
 
     form.addEventListener('submit', function(e) {
-        // Prevent the page from refreshing
         e.preventDefault();
-        
-        // Change text to show it's working
-        result.innerHTML = "Sending message...";
-        result.style.color = "var(--text-muted)";
+        result.innerHTML    = 'Sending message...';
+        result.style.color  = 'var(--text-muted)';
 
         const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        const object   = Object.fromEntries(formData);
+        const json     = JSON.stringify(object);
 
-        // Send the data in the background
         fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body:    json
         })
         .then(async (response) => {
             let json = await response.json();
-            if (response.status == 200) {
-                // Success State!
-                result.innerHTML = "Message sent successfully! We will be in touch.";
-                result.style.color = "var(--gold)"; // Matches your brand colors
-                form.reset(); // Clears the form fields
+            if (response.status === 200) {
+                result.innerHTML   = 'Message sent successfully! We will be in touch.';
+                result.style.color = 'var(--gold)';
+                form.reset();
             } else {
-                // Error State
-                console.log(response);
-                result.innerHTML = json.message;
-                result.style.color = "#ff6b6b";
+                result.innerHTML   = json.message;
+                result.style.color = '#ff6b6b';
             }
         })
         .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong! Please try again.";
-            result.style.color = "#ff6b6b";
+            result.innerHTML   = 'Something went wrong! Please try again.';
+            result.style.color = '#ff6b6b';
         })
         .then(function() {
-            // Make the message disappear after 5 seconds for a clean UI
-            setTimeout(() => {
-                result.innerHTML = "";
-            }, 5000);
+            setTimeout(() => { result.innerHTML = ''; }, 5000);
         });
     });
 });
 </script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
 </body>
 </html>

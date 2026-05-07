@@ -101,7 +101,7 @@ const products = {
   'sesame-seeds': {
     tag:'Premium White Sesame',
     title:'Sesame Seeds',
-    desc:'Our Premium Natural White Sesame Seeds are carefully harvested from the rich, sun-soaked fields of Africa. Sourced directly from local farmers who uphold sustainable and traditional farming practices, our sesame seeds offer unmatched quality and freshness — handpicked and gently cleaned to preserve natural flavor and nutrition.',
+    desc:'Our Premium Natural White Sesame Seeds are carefully harvested from the rich, sun-soaked fields of Africa. Sourced directly from local farmers who uphold sustainable and traditional farming practices, our sesame seeds offer unmatched quality and freshness.',
     highlights:[
       {title:'100% Natural and Pure',text:'Handpicked at peak ripeness and gently cleaned to preserve natural flavor, color, and nutritional benefits. Free from additives, preservatives, and chemicals.'},
       {title:'Nutrient-Rich Superfood',text:'Packed with healthy fats, protein, fiber, vitamins (B1, B3, B5, and E), and minerals (calcium, magnesium, iron) — promoting heart health and bone strength.'},
@@ -112,7 +112,7 @@ const products = {
   'hibiscus': {
     tag:'Nigeria Origin',
     title:'Hibiscus Flower',
-    desc:'Our Dried Hibiscus Flowers are vibrant, ruby-red petals sourced exclusively from Nigeria. Handpicked at the peak of freshness and dried using traditional, chemical-free methods to preserve their natural color, flavor, and nutritional properties — a treasure trove of health benefits and unique flavors.',
+    desc:'Our Dried Hibiscus Flowers are vibrant, ruby-red petals sourced exclusively from Nigeria. Handpicked at the peak of freshness and dried using traditional, chemical-free methods to preserve their natural color, flavor, and nutritional properties.',
     highlights:[
       {title:'100% Natural and Organic',text:'Handpicked at peak freshness and dried using traditional, chemical-free methods to preserve natural color, flavor, and nutritional properties.'},
       {title:'Rich in Antioxidants',text:'Packed with antioxidants — particularly anthocyanins — helping combat free radicals and promoting overall health and vitality.'},
@@ -173,19 +173,15 @@ function closeModalOutside(e) {
 
 // Carousel
 let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const heroImages = document.querySelectorAll('.hero-img'); // New: Selects your 3 images
+const slides     = document.querySelectorAll('.slide');
+const dots       = document.querySelectorAll('.dot');
+const heroImages = document.querySelectorAll('.hero-img');
 
 function goSlide(n) {
-  // 1. Remove active class from current elements
   slides[currentSlide].classList.remove('active');
   dots[currentSlide].classList.remove('active');
   if (heroImages.length > 0) heroImages[currentSlide].classList.remove('active');
-
   currentSlide = n;
-
-  // 2. Add active class to next elements
   slides[currentSlide].classList.add('active');
   dots[currentSlide].classList.add('active');
   if (heroImages.length > 0) heroImages[currentSlide].classList.add('active');
@@ -203,31 +199,35 @@ function initFadeIns() {
 initFadeIns();
 
 // ==========================================================================
-// JSON DATABASE ENGINE & MODALS
+// JSON DATABASE ENGINE
 // ==========================================================================
 
-let globalProducts = []; // Stores our products
+let globalProducts = [];
 
 async function initDatabase() {
     try {
-        const response = await fetch('/content.json', { cache: 'no-store' });
-        const data = await response.json();
+        /*
+          FIX: Removed { cache: 'no-store' } — that flag was bypassing the
+          .htaccess 5-minute cache header on content.json, forcing a fresh
+          server fetch on every single page load. Now the browser respects
+          the cache and only re-fetches after 5 minutes, or when content
+          has actually changed.
+        */
+        const response = await fetch('/content.json');
+        const data     = await response.json();
 
-        // 1. Update Email and Phone on the website
         applyGlobalSettings(data.global_settings);
 
-        // 2. Save products and build the grid
         globalProducts = data.products;
         const grid = document.getElementById('products-grid');
         if (grid) {
             renderProductGrid(globalProducts, grid);
         }
     } catch (error) {
-        console.error("Database Error:", error);
+        console.error('Database Error:', error);
     }
 }
 
-// Automatically updates the Footer and Contact Page
 function applyGlobalSettings(settings) {
     const footerEmail = document.querySelector('footer a[href^="mailto:"]');
     if (footerEmail) {
@@ -241,19 +241,18 @@ function applyGlobalSettings(settings) {
         footerPhone.href = `tel:${cleanPhone}`;
     }
     const contactValues = document.querySelectorAll('.ci-value');
-    if (contactValues.length > 0) contactValues[0].textContent = settings.contact_email; 
+    if (contactValues.length > 0) contactValues[0].textContent = settings.contact_email;
     const contactSubtexts = document.querySelectorAll('.ci-sub');
     if (contactSubtexts.length > 0) contactSubtexts[0].textContent = settings.contact_response_time;
 }
 
-// Builds the Product Cards on the Products Page
 function renderProductGrid(products, gridElement) {
-    gridElement.innerHTML = ''; // Clears out the old hardcoded HTML
+    gridElement.innerHTML = '';
     products.forEach(p => {
         gridElement.innerHTML += `
         <div class="product-card" onclick="openModal('${p.id}')">
           <div class="product-img ${p.color_class}">
-            <img src="${p.image}" alt="${p.name}">
+            <img src="${p.image}" alt="${p.name}" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">${p.name}</div>
@@ -265,15 +264,12 @@ function renderProductGrid(products, gridElement) {
     });
 }
 
-// Opens the Modal and fills it with JSON data
 function openModal(id) {
     const p = globalProducts.find(item => item.id === id);
     if(!p) return;
-    
-    document.getElementById('modal-tag').textContent = p.modal.tag;
+    document.getElementById('modal-tag').textContent   = p.modal.tag;
     document.getElementById('modal-title').textContent = p.modal.title;
-    document.getElementById('modal-desc').textContent = p.modal.desc;
-    
+    document.getElementById('modal-desc').textContent  = p.modal.desc;
     const list = document.getElementById('modal-highlights-list');
     list.innerHTML = p.modal.highlights.map(h => `
       <div class="highlight-item">
@@ -284,87 +280,56 @@ function openModal(id) {
         </div>
       </div>
     `).join('');
-    
     document.getElementById('modal-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
 }
 
-// Closes the Modal
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow='';
+  document.body.style.overflow = '';
 }
 function closeModalOutside(e) {
   if(e.target===document.getElementById('modal-overlay')) closeModal();
 }
 
-// Start the engine when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     initDatabase();
 });
 
-/* ── MOBILE MENU LOGIC ── */
-document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
-    const navLinks = document.querySelectorAll(".nav-links a");
+/* ── MOBILE MENU ── */
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    const navLinks  = document.querySelectorAll('.nav-links a');
 
-    // Toggle menu open/close
-    hamburger.addEventListener("click", function() {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-        
-        // Prevent background scrolling when menu is open
-        if(navMenu.classList.contains("active")) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
     });
 
-    // Close menu when a link is clicked
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-            document.body.style.overflow = "auto";
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     });
 });
 
-/* ══════════════════════════════════════════════════════════════════════════
-   ACTIVE NAV HIGHLIGHTER (Hostinger-Proof)
-   Automatically detects the current page and highlights the menu link.
-══════════════════════════════════════════════════════════════════════════ */
+/* ── ACTIVE NAV HIGHLIGHTER ── */
 function highlightActiveNav() {
-    // 1. Get the current URL path
     let currentPath = window.location.pathname;
-    let pageName = currentPath.split('/').pop(); 
-    
-    // 2. If it's the root domain (e.g., tazverde.com/), default to 'index'
-    if (pageName === '' || pageName === '/') {
-        pageName = 'index';
-    }
-
-    // 3. Clean the current page name (removes .html for server compatibility)
+    let pageName    = currentPath.split('/').pop();
+    if (pageName === '' || pageName === '/') pageName = 'index';
     let cleanCurrent = pageName.replace('.html', '').toLowerCase();
 
-    // 4. Find ALL links in the header/nav (Catches both Desktop and Mobile Canvas)
     const navLinks = document.querySelectorAll('header a, nav a, .nav-links a');
-    
     navLinks.forEach(link => {
         let linkHref = link.getAttribute('href');
-        
         if (linkHref) {
-            // Clean the link href the exact same way
             let cleanHref = linkHref.replace('.html', '').toLowerCase();
-            
-            // If the link is just "/" or empty, treat it as "index"
-            if (cleanHref === '' || cleanHref === '/') {
-                cleanHref = 'index';
-            }
-            
-            // 5. If they match AND it's not the CTA button, add the active class!
+            if (cleanHref === '' || cleanHref === '/') cleanHref = 'index';
             if (cleanCurrent === cleanHref && !link.classList.contains('nav-cta')) {
                 link.classList.add('active-nav');
             }
@@ -372,5 +337,22 @@ function highlightActiveNav() {
     });
 }
 
-// Run the function as soon as the page loads
 document.addEventListener('DOMContentLoaded', highlightActiveNav);
+
+/* ── SCROLL TO TOP BUTTON ── */
+(function () {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();

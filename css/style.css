@@ -502,3 +502,62 @@ header a.active-nav,
 nav a.active-nav {
     color: #c8973a !important;
 }
+
+/* ── SCROLL TO TOP BUTTON ── */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 46px;
+  height: 46px;
+  background: var(--green-dark);
+  color: var(--gold);
+  border: 1px solid rgba(200, 151, 58, 0.35);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease,
+              visibility 0.3s ease, background 0.2s ease,
+              border-color 0.2s ease;
+}
+
+#scrollTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+  border-color: var(--gold);
+}
+
+#scrollTopBtn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  transition: transform 0.2s ease;
+}
+
+#scrollTopBtn:hover svg {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  #scrollTopBtn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+  }
+}

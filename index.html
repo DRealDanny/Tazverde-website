@@ -4,11 +4,21 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Home - TazVerde LTD</title>
-    <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
+
+<!-- Fonts — async, non-blocking -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+<!-- CSS — media attributes stop non-matching files from blocking render -->
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/mobile-res.css">
-<link rel="stylesheet" href="css/tablet-res.css">
+<link rel="stylesheet" href="css/mobile-res.css" media="(max-width: 767px)">
+<link rel="stylesheet" href="css/tablet-res.css" media="(min-width: 768px) and (max-width: 1024px)">
+
+<!-- DNS prefetch for CDN -->
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
 
@@ -16,16 +26,14 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="/">
-      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img">
+      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img" width="120" height="38">
     </a>
-    
     <div class="nav-links" id="nav-menu">
       <a href="/">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -34,7 +42,7 @@
   </div>
 </nav>
 
-<!-- ═══════════════════════════════ HOME PAGE ═══════════════════════════════ -->
+<!-- ═══════════════════════ HOME PAGE ═══════════════════════ -->
 <div class="page active" id="page-home">
 
   <!-- Hero -->
@@ -42,9 +50,13 @@
     <div class="hero-bg"></div>
     <div class="hero-pattern"></div>
     <div class="hero-image-slider">
-      <img src="assets/images/hero-02.png" class="hero-img active" alt="Hero 1">
-      <img src="assets/images/hero-01.png" class="hero-img" alt="Hero 2">
-      <img src="assets/images/hero-03.png" class="hero-img" alt="Hero 3">
+      <!--
+        First hero image: fetchpriority="high" — LCP, load immediately
+        Other two: loading="lazy" — hidden initially, load when needed
+      -->
+      <img src="assets/images/hero-02.png" class="hero-img active" alt="Hero 1" width="600" height="600" fetchpriority="high">
+      <img src="assets/images/hero-01.png" class="hero-img" alt="Hero 2" width="600" height="600" loading="lazy">
+      <img src="assets/images/hero-03.png" class="hero-img" alt="Hero 3" width="600" height="600" loading="lazy">
     </div>
     <div class="hero-content">
       <div class="hero-tag"><div class="hero-tag-dot"></div><span>UK Headquartered · Africa Sourced · Global Delivered</span></div>
@@ -53,7 +65,6 @@
           <h1>Africa's Finest —<br><em>Delivered Clean,</em><br>Bold, and Global.</h1>
           <p class="hero-sub">Premium-quality agricultural products sourced from Uganda, Nigeria, Ghana, and Tanzania, delivered to markets worldwide.</p>
           <div class="hero-btns">
-            <!-- Buttons converted to real links -->
             <a href="products.html" class="btn-primary">Explore Our Products</a>
             <a href="about.html" class="btn-outline">Our Story</a>
           </div>
@@ -62,7 +73,6 @@
           <h1>Grown Pure.<br><em>Sourced Right.</em><br>Trusted Worldwide.</h1>
           <p class="hero-sub">From handpicked vanilla pods to vibrant hibiscus — each product reflects deep respect for land, farmers, and quality.</p>
           <div class="hero-btns">
-            <!-- Buttons converted to real links -->
             <a href="products.html" class="btn-primary">Explore Our Products</a>
             <a href="contact.html" class="btn-outline">Get In Touch</a>
           </div>
@@ -71,7 +81,6 @@
           <h1>Bold Flavors.<br><em>Clean Sourcing.</em><br>No Compromises.</h1>
           <p class="hero-sub">Chemical-free, eco-conscious farming methods — full traceability from farm to export, meeting international standards.</p>
           <div class="hero-btns">
-            <!-- Buttons converted to real links -->
             <a href="contact.html" class="btn-primary">Request a Quote</a>
             <a href="about.html" class="btn-outline">Learn More</a>
           </div>
@@ -83,7 +92,6 @@
         <div class="dot" onclick="goSlide(2)"></div>
       </div>
     </div>
-    <!-- Stats Block Removed Here! -->
   </section>
 
   <!-- Who We Are -->
@@ -92,8 +100,8 @@
       <div class="who-grid">
         <div class="who-image fade-in">
           <div class="who-image-main">
-            <!-- Image Tag Added Here -->
-            <img src="assets/images/who-weare.png" alt="Who We Are - TazVerde">
+            <!-- Below fold — lazy load -->
+            <img src="assets/images/who-weare.png" alt="Who We Are - TazVerde" width="500" height="625" loading="lazy">
           </div>
           <div class="who-image-badge">
             <span class="who-badge-num">2024</span>
@@ -112,7 +120,6 @@
             <div class="who-feature"><div class="who-feature-dot"></div><p>Farm-to-export integrity</p></div>
           </div>
           <div style="margin-top:2.5rem;">
-            <!-- Button converted to real link -->
             <a href="about.html" class="btn-primary">Discover Our Story</a>
           </div>
         </div>
@@ -128,47 +135,47 @@
           <div class="section-label"><span>Our Products</span></div>
           <h2 class="section-title" style="margin-bottom:0;">Nature's Finest,<br><em>Globally Delivered</em></h2>
         </div>
-        <!-- Button converted to real link -->
         <a href="products.html" class="btn-outline">View All Products</a>
       </div>
+      <!-- Product icon images — below fold, lazy load -->
       <div class="prod-grid">
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/vanilla-pods.png" alt="Vanilla Pods"></div>
+          <div class="prod-icon"><img src="assets/images/vanilla-pods.png" alt="Vanilla Pods" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Vanilla Pods</div>
           <div class="prod-origin">Uganda Origin</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/coffee-beans.png" alt="Coffee Beans"></div>
+          <div class="prod-icon"><img src="assets/images/coffee-beans.png" alt="Coffee Beans" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Coffee Beans</div>
           <div class="prod-origin">East & West Africa</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/cocoa-beans.png" alt="Cocoa Beans"></div>
+          <div class="prod-icon"><img src="assets/images/cocoa-beans.png" alt="Cocoa Beans" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Cocoa Beans</div>
           <div class="prod-origin">Africa Origin</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/chilli-powder.png" alt="Chilli Powder"></div>
+          <div class="prod-icon"><img src="assets/images/chilli-powder.png" alt="Chilli Powder" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Chilli Powder</div>
           <div class="prod-origin">Sun-Dried, Natural</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/crude-palm-oil.png" alt="Crude Palm Oil"></div>
+          <div class="prod-icon"><img src="assets/images/crude-palm-oil.png" alt="Crude Palm Oil" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Crude Palm Oil</div>
           <div class="prod-origin">Sustainably Sourced</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/hibiscus-flower.png" alt="Hibiscus"></div>
+          <div class="prod-icon"><img src="assets/images/hibiscus-flower.png" alt="Hibiscus" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Hibiscus</div>
           <div class="prod-origin">Nigeria Origin</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/ginger.png" alt="Ginger"></div>
+          <div class="prod-icon"><img src="assets/images/ginger.png" alt="Ginger" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Ginger & Garlic</div>
           <div class="prod-origin">Africa Origin</div>
         </div>
         <div class="prod-card" onclick="window.location.href='products.html'">
-          <div class="prod-icon"><img src="assets/images/sesame-seeds.png" alt="Sesame Seeds"></div>
+          <div class="prod-icon"><img src="assets/images/sesame-seeds.png" alt="Sesame Seeds" width="48" height="48" loading="lazy"></div>
           <div class="prod-name">Sesame Seeds</div>
           <div class="prod-origin">Africa Origin</div>
         </div>
@@ -213,7 +220,6 @@
     <div class="section-inner">
       <h2>Ready to Source Premium Agricultural Products?</h2>
       <p>Connect with our team for bulk orders, partnerships, and custom sourcing requirements.</p>
-      <!-- Button converted to real link -->
       <a href="contact.html" class="btn-dark">Get In Touch Today</a>
     </div>
   </div>
@@ -228,7 +234,6 @@
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
-          <!-- Links converted to real links -->
           <a href="/">Home</a>
           <a href="about.html">About Us</a>
           <a href="products.html">Products</a>
@@ -236,7 +241,6 @@
         </div>
         <div class="footer-col">
           <h5>Products</h5>
-          <!-- Links converted to real links -->
           <a href="products.html">Vanilla Pods</a>
           <a href="products.html">Coffee Beans</a>
           <a href="products.html">Cocoa Beans</a>
@@ -245,23 +249,32 @@
         <div class="footer-col">
           <h5>Contact</h5>
           <a href="mailto:info@tazverde.com">info@tazverde.com</a>
-          <!-- Clickable phone number -->
           <a href="tel:+2344366748892">+234 436 674 8892</a>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 TazVerde LTD. All rights reserved.</div>
-        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration: none; color: inherit;"><span>Web design by</span><strong>Creativo</strong></a>
+        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration:none;color:inherit;"><span>Web design by</span><strong>Creativo</strong></a>
       </div>
     </div>
   </footer>
 </div>
 
-<script src="js/script.js"></script>
+<!--
+  ALL SCRIPTS DEFERRED — download in background, execute after HTML is parsed.
+  Order is preserved: script.js → gsap → ScrollTrigger → animation.js
+-->
+<script defer src="js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="js/animation.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/animation.js"></script>
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
 
 </body>
 </html>

@@ -4,37 +4,37 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Products - TazVerde LTD</title>
-    <link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/assets/brand/taz-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/mobile-res.css">
-<link rel="stylesheet" href="css/tablet-res.css">
+<link rel="stylesheet" href="css/mobile-res.css" media="(max-width: 767px)">
+<link rel="stylesheet" href="css/tablet-res.css" media="(min-width: 768px) and (max-width: 1024px)">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-inner">
     <a class="logo" href="/">
-      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img">
+      <img src="/assets/brand/taz-logo.png" alt="TazVerde Official Logo" class="brand-logo-img" width="120" height="38">
     </a>
-    
     <div class="nav-links" id="nav-menu">
       <a href="/">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════ PRODUCTS PAGE ═══════════════════════════════ -->
 <div class="page active" id="page-products">
   <section class="products-hero">
     <div class="section-inner products-hero-inner">
@@ -46,11 +46,17 @@
 
   <section class="all-products">
     <div class="section-inner">
+      <!--
+        Product grid — rebuilt dynamically by initDatabase() in script.js.
+        The hardcoded cards below are fallbacks and also serve as
+        initial render before JS runs. All images are lazy loaded
+        since they're below the hero fold.
+      -->
       <div class="products-grid" id="products-grid">
 
         <div class="product-card" onclick="openModal('vanilla-pods')">
           <div class="product-img pc-vanilla">
-            <img src="assets/images/vanilla-pods.png" alt="Vanilla Pods">
+            <img src="assets/images/vanilla-pods.png" alt="Vanilla Pods" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Vanilla Pods</div>
@@ -61,7 +67,7 @@
 
         <div class="product-card" onclick="openModal('vanilla-powder')">
           <div class="product-img pc-vpowder">
-            <img src="assets/images/vanilla-powder.png" alt="Vanilla Powder">
+            <img src="assets/images/vanilla-powder.png" alt="Vanilla Powder" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Vanilla Powder</div>
@@ -72,7 +78,7 @@
 
         <div class="product-card" onclick="openModal('cocoa-beans')">
           <div class="product-img pc-cocoa">
-            <img src="assets/images/cocoa-beans.png" alt="Cocoa Beans">
+            <img src="assets/images/cocoa-beans.png" alt="Cocoa Beans" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Cocoa Beans</div>
@@ -83,7 +89,7 @@
 
         <div class="product-card" onclick="openModal('cocoa-shells')">
           <div class="product-img pc-shells">
-            <img src="assets/images/cocoa-shells.png" alt="Cocoa Shells">
+            <img src="assets/images/cocoa-shells.png" alt="Cocoa Shells" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Cocoa Shells</div>
@@ -94,7 +100,7 @@
 
         <div class="product-card" onclick="openModal('cocoa-nibs')">
           <div class="product-img pc-nibs">
-            <img src="assets/images/cocoa-nibs.png" alt="Cocoa Nibs">
+            <img src="assets/images/cocoa-nibs.png" alt="Cocoa Nibs" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Cocoa Nibs</div>
@@ -105,7 +111,7 @@
 
         <div class="product-card" onclick="openModal('coffee-beans')">
           <div class="product-img pc-coffee">
-            <img src="assets/images/coffee-beans.png" alt="Coffee Beans">
+            <img src="assets/images/coffee-beans.png" alt="Coffee Beans" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Coffee Beans</div>
@@ -116,7 +122,7 @@
 
         <div class="product-card" onclick="openModal('chilli-powder')">
           <div class="product-img pc-chilli">
-            <img src="assets/images/chilli-powder.png" alt="Chilli Powder">
+            <img src="assets/images/chilli-powder.png" alt="Chilli Powder" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Chilli Powder</div>
@@ -127,7 +133,7 @@
 
         <div class="product-card" onclick="openModal('ginger')">
           <div class="product-img pc-ginger">
-            <img src="assets/images/ginger.png" alt="Ginger">
+            <img src="assets/images/ginger.png" alt="Ginger" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Ginger</div>
@@ -138,7 +144,7 @@
 
         <div class="product-card" onclick="openModal('garlic')">
           <div class="product-img pc-garlic">
-            <img src="assets/images/garlic.png" alt="Garlic">
+            <img src="assets/images/garlic.png" alt="Garlic" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Garlic</div>
@@ -149,7 +155,7 @@
 
         <div class="product-card" onclick="openModal('sesame-seeds')">
           <div class="product-img pc-sesame">
-            <img src="assets/images/sesame-seeds.png" alt="Sesame Seeds">
+            <img src="assets/images/sesame-seeds.png" alt="Sesame Seeds" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Sesame Seeds</div>
@@ -160,7 +166,7 @@
 
         <div class="product-card" onclick="openModal('hibiscus')">
           <div class="product-img pc-hibiscus">
-            <img src="assets/images/hibiscus-flower.png" alt="Hibiscus Flower">
+            <img src="assets/images/hibiscus-flower.png" alt="Hibiscus Flower" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Hibiscus Flower</div>
@@ -171,7 +177,7 @@
 
         <div class="product-card" onclick="openModal('crude-palm-oil')">
           <div class="product-img pc-cpo">
-            <img src="assets/images/crude-palm-oil.png" alt="Crude Palm Oil (CPO)">
+            <img src="assets/images/crude-palm-oil.png" alt="Crude Palm Oil (CPO)" width="400" height="200" loading="lazy">
           </div>
           <div class="product-body">
             <div class="product-name">Crude Palm Oil (CPO)</div>
@@ -188,12 +194,10 @@
     <div class="section-inner">
       <h2>Ready to Place a Bulk Order?</h2>
       <p>Contact us for competitive pricing, MOQs, and tailored export solutions.</p>
-      <!-- Fixed the CTA button link! -->
       <a href="contact.html" class="btn-dark">Request a Quote</a>
     </div>
   </div>
 
- <!-- Footer -->
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
@@ -203,36 +207,27 @@
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
-          <!-- Links converted to real links -->
-          <a href="/">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="products.html">Products</a>
-          <a href="contact.html">Contact</a>
+          <a href="/">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
           <h5>Products</h5>
-          <!-- Links converted to real links -->
-          <a href="products.html">Vanilla Pods</a>
-          <a href="products.html">Coffee Beans</a>
-          <a href="products.html">Cocoa Beans</a>
-          <a href="products.html">Crude Palm Oil</a>
+          <a href="products.html">Vanilla Pods</a><a href="products.html">Coffee Beans</a><a href="products.html">Cocoa Beans</a><a href="products.html">Crude Palm Oil</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
           <a href="mailto:info@tazverde.com">info@tazverde.com</a>
-          <!-- Clickable phone number -->
           <a href="tel:+2344366748892">+234 436 674 8892</a>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 TazVerde LTD. All rights reserved.</div>
-        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration: none; color: inherit;"><span>Web design by</span><strong>Creativo</strong></a>
+        <a href="https://creativocreates.live/" target="_blank" class="sdg-badge" style="text-decoration:none;color:inherit;"><span>Web design by</span><strong>Creativo</strong></a>
       </div>
     </div>
   </footer>
 </div>
 
-<!-- ═══════════════════════════════ PRODUCT MODAL ═══════════════════════════════ -->
+<!-- Product Modal -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
   <div class="modal" id="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
@@ -247,10 +242,18 @@
     </div>
   </div>
 </div>
-<script src="js/script.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/animation.js"></script>
+<script defer src="js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="js/animation.js"></script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
 </body>
 </html>
